@@ -1,0 +1,48 @@
+20% Diseño
+30% Arquitectura y código
+50% Funcionalidad
+
+1 Crash = 0.25 menos
+ 
+2 Aplicaciones 
+
+Aplicación Alumnos
+
+ - Un alumno puede hacer login mediante su matricula y contraseña
+ - Un alumno puede editar su perfil (foto, nombre, ap. paterno, ap. materno, correo)
+ - Un alumno puede ver un listado de sus materias  
+ - Un alumno puede ver el detalle de cada materia (foto, nombre, descripción, cuando tiene la materia (hora y fecha) 
+	y su calificación por parcial)
+
+ + Notificacion de calif -> llevar a detalle de materia
+ + Camara/Galeria + 1pto
+
+ Matricula
+ Nombre
+ ApPaterno
+ ApMaterno
+ Correo
+ Contrasena
+ Foto
+
+
+
+
+Aplicación Maestro
+
+ - Un maestro puede hacer login mediante su matricula y contraseña
+ - Un maestro puede editar su perfil (foto, nombre, ap. paterno, ap. materno, correo)
+ - Un maestro puede ver el listado de materias que imparte
+ - Un maestro puede ver el detalle de cada materia que imparte
+ - Un maestro puede ver el listado de alumnos por materia
+ - Un maestro puede ver el detalle de un alumno y poner la calificación de cada parcial 
+ 
+ + Notificaciones firebase +2 ptos -> Notificar cuando se suba una calificación
+ + Camara/Galeria + 1pto
+
+Observaciones
+ - 8 Dic
+ - Single Activity
+ - Fragments
+ - DI / Hilt
+ - 5 Alumnos/ 5 Maestros
