@@ -43,23 +43,28 @@ Observaciones
  												PROCEDIMIENTOS ALMACENADOS
 
  VampiCompartido
- - login (mandamos matricula y contraseña, retorna el usuario completo o nada)
- - editar_usuario
+ - login (mandamos matricula y contraseña, retorna el usuario completo o nada) ✔
+ - editar_usuario ✔
 
- VampiAlumnos
+ VampiAlumnos App
 
- - select_materia_by_alumno (detalle - trae los ids de las materias que tiene un alumno) - se manda matricula
- - select_calif (detalle - se manda idmateria y matricula, retorna las califs de un alumno de una materia en especifico)
+ - select_materia_by_alumno (detalle - trae los ids de las materias que tiene un alumno) - se manda matricula ✔
 
- VampiMaestro
+ VampiMaestro App
 
- - select_materia_by_maestro (detalle - trae los ids de las materias que tiene un profe) - se manda matricula
- - select_alumnos_by_materia (detalle - trae las matriculas de los alumnos por materia) - se manda id
- - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda matricula, idmateria, y califs
+ - select_materia_by_maestro (detalle - trae los ids de las materias que tiene un profe) - se manda matricula ✔
+ - select_alumnos_by_materia (detalle - trae las matriculas de los alumnos por materia) - se manda id ✔
+ - select_calif (detalle - trae el detalle de un alumno por materia) - se manda idmateria y martricula ✔
+ - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda matricula, idmateria, y califs ✔
 
  VampiMateria
 
- - select_materia_by_id
+ - select_materia_by_id ✔
+
+VampiUser
+
+ - select_user_by_matricula ✔
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
