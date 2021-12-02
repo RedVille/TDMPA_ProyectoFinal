@@ -17,16 +17,6 @@ Aplicación Alumnos
  + Notificacion de calif -> llevar a detalle de materia
  + Camara/Galeria + 1pto
 
- Matricula
- Nombre
- ApPaterno
- ApMaterno
- Correo
- Contrasena
- Foto
-
-
-
 
 Aplicación Maestro
 
@@ -46,3 +36,65 @@ Observaciones
  - Fragments
  - DI / Hilt
  - 5 Alumnos/ 5 Maestros
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ 												PROCEDIMIENTOS ALMACENADOS
+
+ VampiCompartido
+ - login (mandamos matricula y contraseña, retorna el usuario completo o nada)
+ - editar_usuario
+
+ VampiAlumnos
+
+ - select_materia_by_alumno (detalle - trae los ids de las materias que tiene un alumno) - se manda matricula
+ - select_calif (detalle - se manda idmateria y matricula, retorna las califs de un alumno de una materia en especifico)
+
+ VampiMaestro
+
+ - select_materia_by_maestro (detalle - trae los ids de las materias que tiene un profe) - se manda matricula
+ - select_alumnos_by_materia (detalle - trae las matriculas de los alumnos por materia) - se manda id
+ - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda matricula, idmateria, y califs
+
+ VampiMateria
+
+ - select_materia_by_id
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 												DUDAS
+ - tenemos que hacer el registro o los usuarios que ya tenemos  -  registro_usuario
+ - cómo le asignas una materia a un alumno?
+ - cómo le asignas una materia a un maestro?
+
+ - cómo se dan de alta las materias, se registran desde la app o ya las tenemos que tener hardcodeadas
+
+ - a qué hora se entrefa el 8¿
+
+
+ 												TEORÍA 
+ Se asignan materias al registrar un usuario
+
+
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+												PLAn
+
+2 DIC
+ - BD ✔
+ - PROCEDIMIENTOS ALMACENADOS
+ - API.JS Y TONDER
+3 DIC
+ - LÓGICA DE LAS CARPETAS Y ARCHIVOS
+ - DISEÑO BASE DE LA APP - XAML
+4 DIC
+ - CONEXIÓN CON API
+ - DAO
+5-6 DIC
+ - LÓGICA - FRONT (con notifs simples)
+7 DIC
+ - DETALLAR EL DISEÑO UI
+7-8 DIC
+ - NOTIFS (basefire si es que)
+ - Camara y Galeria
