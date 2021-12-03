@@ -40,55 +40,38 @@ Observaciones
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
- 												PROCEDIMIENTOS ALMACENADOS
+ 												PROCEDIMIENTOS ALMACENADOS ✔
 
- VampiCompartido
+ VampiCompartido ✔
  - login (mandamos matricula y contraseña, retorna el usuario completo o nada) ✔
  - editar_usuario ✔
 
- VampiAlumnos App
+ VampiAlumnos App ✔
 
  - select_materia_by_alumno (detalle - trae los ids de las materias que tiene un alumno) - se manda matricula ✔
 
- VampiMaestro App
+ VampiMaestro App ✔
 
  - select_materia_by_maestro (detalle - trae los ids de las materias que tiene un profe) - se manda matricula ✔
  - select_alumnos_by_materia (detalle - trae las matriculas de los alumnos por materia) - se manda id ✔
  - select_calif (detalle - trae el detalle de un alumno por materia) - se manda idmateria y martricula ✔
  - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda matricula, idmateria, y califs ✔
 
- VampiMateria
+ VampiMateria ✔
 
  - select_materia_by_id ✔
 
-VampiUser
+VampiUser ✔
 
  - select_user_by_matricula ✔
 
 
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- 												DUDAS
- - tenemos que hacer el registro o los usuarios que ya tenemos  -  registro_usuario
- - cómo le asignas una materia a un alumno?
- - cómo le asignas una materia a un maestro?
-
- - cómo se dan de alta las materias, se registran desde la app o ya las tenemos que tener hardcodeadas
-
- - a qué hora se entrefa el 8¿
-
-
- 												TEORÍA 
- Se asignan materias al registrar un usuario
-
-
  /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 												PLAn
 
 2 DIC
  - BD ✔
- - PROCEDIMIENTOS ALMACENADOS
+ - PROCEDIMIENTOS ALMACENADOS ✔
  - API.JS Y TONDER
 3 DIC
  - LÓGICA DE LAS CARPETAS Y ARCHIVOS
