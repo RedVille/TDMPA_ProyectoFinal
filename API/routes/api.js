@@ -155,6 +155,26 @@ router.get("/getAlumnosByMateria/:idmateria", (req, res)=>{
 
 ////////////////////////////////////////////////////////////////////
 
+// & getCalif
+
+router.post('/getCalif', function(req, res){
+
+    var usuario = req.body
+    var sql = "CALL stp_select_calif(?,?)"
+
+    var data = [usuario.idmateria, usuario.matricula]
+
+    conn.query(sql, data, function(err, results){
+        if(err){
+            console.log('ERROR EN LA CONSULTA: ', err);
+        }else{
+            console.log(results[0]);
+            res.send(results[0]);
+        }
+    })
+})
+
+////////////////////////////////////////////////////////////////////
 //GETUSERBYID
 
 router.get('/getmoviebyid/:ID', function(req, res){
