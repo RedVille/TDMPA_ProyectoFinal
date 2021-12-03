@@ -57,11 +57,11 @@ Observaciones
  - select_calif (detalle - trae el detalle de un alumno por materia) - se manda idmateria y martricula ✔ ✔
  - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda iddetalle_alumno, y califs ✔ ✔
 
- VampiMateria ✔
+ VampiMateria ✔ ✔
 
- - select_materia_by_id ✔
+ - select_materia_by_id ✔ ✔
 
-VampiUser ✔
+VampiUser ✔ ✔
 
  - select_user_by_matricula ✔ ✔
 
@@ -106,6 +106,8 @@ editCalif(PUT): http://localhost:3000/api/editCalif
     "calif2": 10,
     "calif3": 9.5
 }
+
+getMateriaById(GET): http://localhost:3000/api/getMateriaById/3
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 												PLAn
