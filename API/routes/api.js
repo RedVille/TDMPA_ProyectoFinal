@@ -22,7 +22,7 @@ conn.connect(function(err){
 
 ////////////////////////////////////////////////////////////////////
 
-// getUserByMatricula
+// & getUserByMatricula
 
 router.get("/getUserByMatricula/:matricula", (req, res)=>{
     var matricula = req.params.matricula
@@ -41,7 +41,7 @@ router.get("/getUserByMatricula/:matricula", (req, res)=>{
 
 ////////////////////////////////////////////////////////////////////
 
-// login
+// ! login
 
 router.post("/login", (req, res) => {
     var usuario = req.body
@@ -71,6 +71,27 @@ router.post("/login", (req, res) => {
                 }
                 res.send(respuesta);
             }
+        }
+    })
+})
+
+////////////////////////////////////////////////////////////////////
+
+// ^ editUser
+
+router.put('/editUser', function(req, res){
+
+    var usuario = req.body
+    var sql = "CALL stp_editar_usuario(?,?,?,?,?,?)"
+
+    var data = [usuario.matricula, usuario.foto, usuario.nombre, usuario.appaterno, usuario.apmaterno, usuario.correo]
+
+    conn.query(sql, data, function(err, results){
+        if(err){
+            console.log('ERROR EN LA CONSULTA: ', err);
+        }else{
+            console.log(results[0]);
+            res.send(results[0]);
         }
     })
 })

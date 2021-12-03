@@ -44,7 +44,7 @@ Observaciones
 
  VampiCompartido ✔
  - login (mandamos matricula y contraseña, retorna el usuario completo o nada) ✔ ✔
- - editar_usuario ✔
+ - editar_usuario ✔ ✔
 
  VampiAlumnos App ✔
 
@@ -76,7 +76,15 @@ Login(POST): http://localhost:3000/api/login
 
 SelectUserByMatricula(GET): http://localhost:3000/api/getUserByMatricula/70561
 
-
+EditUser(PUT): http://localhost:3000/api/editUser
+{
+    "matricula": "70561",
+    "foto": "",
+    "nombre": "Polangas",
+    "appaterno": "Villa707",
+    "apmaterno": "Rojo707",
+    "correo": "pols@prodigy.net.mx"
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 												PLAn
 
