@@ -98,9 +98,9 @@ router.put('/editUser', function(req, res){
 
 ////////////////////////////////////////////////////////////////////
 
-// & getUserByMatricula
+// ? getMateriaByAlumno
 
-router.get("/selectMateriaByAlumno/:matricula", (req, res)=>{
+router.get("/getMateriaByAlumno/:matricula", (req, res)=>{
     var matricula = req.params.matricula
     var sql = "CALL stp_select_materia_by_alumno(?)"
     var parametros = [matricula]
@@ -117,7 +117,24 @@ router.get("/selectMateriaByAlumno/:matricula", (req, res)=>{
 
 ////////////////////////////////////////////////////////////////////
 
+// * getMateriaByMaestro
 
+router.get("/getMateriaByMaestro/:matricula", (req, res)=>{
+    var matricula = req.params.matricula
+    var sql = "CALL stp_select_materia_by_maestro(?)"
+    var parametros = [matricula]
+    conn.query(sql,parametros, (err, result)=>{
+        if(err){
+            console.log("ERROR EN CONSULTA: ", err)
+            res.send(JSON.stringify("ERROR EN CONSULTA: " + err));
+        }else{
+            console.log(result[0]);
+            res.send(result[0]);
+        }
+    })
+})
+
+////////////////////////////////////////////////////////////////////
 
 //GETUSERBYID
 
