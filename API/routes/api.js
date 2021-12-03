@@ -44,7 +44,7 @@ router.post("/login", (req, res) => {
     var usuario = req.body
 
     var sql = "CALL stp_login(?,?)"
-    var parametros = [usuario.usuario, usuario.password]
+    var parametros = [usuario.matricula, usuario.contrasena]
     conn.query(sql,parametros, (err, result)=>{
         if(err){
             console.log("ERROR EN CONSULTA: ",err)
@@ -57,14 +57,14 @@ router.post("/login", (req, res) => {
                 var respuesta = {
                     mensaje: "Bienvenido(a)",
                     login: true,
-                    id: resultado[0].id
+                    matricula: resultado[0].matricula
                 }
                 res.send(respuesta);
             }else{
                 var respuesta = {
                     mensaje: "Credenciales incorrectas",
                     login: false,
-                    id: 0
+                    matricula: 0
                 }
                 res.send(respuesta);
             }
