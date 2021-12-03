@@ -50,12 +50,12 @@ Observaciones
 
  - select_materia_by_alumno (detalle - trae los ids de las materias que tiene un alumno) - se manda matricula ✔ ✔
 
- VampiMaestro App ✔
+ VampiMaestro App ✔ ✔
 
  - select_materia_by_maestro (detalle - trae los ids de las materias que tiene un profe) - se manda matricula ✔ ✔
  - select_alumnos_by_materia (detalle - trae las matriculas de los alumnos por materia) - se manda id ✔ ✔
  - select_calif (detalle - trae el detalle de un alumno por materia) - se manda idmateria y martricula ✔ ✔
- - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda matricula, idmateria, y califs ✔
+ - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda iddetalle_alumno, y califs ✔ ✔
 
  VampiMateria ✔
 
@@ -68,15 +68,16 @@ VampiUser ✔
 ////////////////////////////////////////////RUTA BASE PARA LA API/////////////////////////////////////////
 http://localhost:3000/api/
 
-Login(POST): http://localhost:3000/api/login
+
+getUserByMatricula(GET): http://localhost:3000/api/getUserByMatricula/70561
+
+login(POST): http://localhost:3000/api/login
 {
     "matricula": "70561",
     "contrasena": "123"
 }
 
-SelectUserByMatricula(GET): http://localhost:3000/api/getUserByMatricula/70561
-
-EditUser(PUT): http://localhost:3000/api/editUser
+editUser(PUT): http://localhost:3000/api/editUser
 {
     "matricula": "70561",
     "foto": "",
@@ -96,6 +97,14 @@ getCalif(POST): http://localhost:3000/api/getCalif
 {
     "idmateria": 2,
     "matricula": "70561"
+}
+
+editCalif(PUT): http://localhost:3000/api/editCalif
+{
+    "iddetalle_alumno": 1,
+    "calif1": 6,
+    "calif2": 10,
+    "calif3": 9.5
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
