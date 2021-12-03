@@ -43,7 +43,7 @@ Observaciones
  												PROCEDIMIENTOS ALMACENADOS ✔
 
  VampiCompartido ✔
- - login (mandamos matricula y contraseña, retorna el usuario completo o nada) ✔
+ - login (mandamos matricula y contraseña, retorna el usuario completo o nada) ✔ ✔
  - editar_usuario ✔
 
  VampiAlumnos App ✔
@@ -63,7 +63,7 @@ Observaciones
 
 VampiUser ✔
 
- - select_user_by_matricula ✔
+ - select_user_by_matricula ✔ ✔
 
 ////////////////////////////////////////////RUTA BASE PARA LA API/////////////////////////////////////////
 http://localhost:3000/api/
@@ -74,7 +74,10 @@ Login(POST): http://localhost:3000/api/login
     "contrasena": "123"
 }
 
- /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+SelectUserByMatricula(GET): http://localhost:3000/api/getUserByMatricula/70561
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 												PLAn
 
 2 DIC

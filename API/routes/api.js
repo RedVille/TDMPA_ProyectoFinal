@@ -20,15 +20,14 @@ conn.connect(function(err){
     console.log("CONECTADO A BASE DE DATOS");
 })
 
-////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
+// getUserByMatricula
 
-//LOGIN Y LOGOUT
-
-router.post("/getNameById/:id", (req, res)=>{
-    var id = req.params.id
-    var sql = "CALL stp_GetNameById(?)"
-    var parametros = [id]
+router.get("/getUserByMatricula/:matricula", (req, res)=>{
+    var matricula = req.params.matricula
+    var sql = "CALL stp_select_user_by_matricula(?)"
+    var parametros = [matricula]
     conn.query(sql,parametros, (err, result)=>{
         if(err){
             console.log("ERROR EN CONSULTA: ", err)
@@ -39,6 +38,10 @@ router.post("/getNameById/:id", (req, res)=>{
         }
     })
 })
+
+////////////////////////////////////////////////////////////////////
+
+// login
 
 router.post("/login", (req, res) => {
     var usuario = req.body
@@ -68,31 +71,6 @@ router.post("/login", (req, res) => {
                 }
                 res.send(respuesta);
             }
-        }
-    })
-})
-
-router.post("/logout", (req, res)=>{
-    res.send("sesión cerrada correctamente")
-})
-
-
-//////////////////////////////////////////////////////////////
-
-//REGISTRO
-
-router.post('/adduser', (req, res) => {
-
-    var usuario = req.body
-    var sql = "CALL stp_adduser(?,?,?,?,?,?)"
-    var data = [usuario.usuario, usuario.nombre, usuario.apellido, usuario.correo, usuario.password, usuario.cumple]
-
-    conn.query(sql, data, (err, results) =>{
-        if(err){
-            console.log('ERROR EN LA CONSULTA: ', err);
-        }else{
-            console.log(results[0]);
-            res.send(results[0]);
         }
     })
 })
