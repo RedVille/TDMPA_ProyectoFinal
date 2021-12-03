@@ -136,6 +136,25 @@ router.get("/getMateriaByMaestro/:matricula", (req, res)=>{
 
 ////////////////////////////////////////////////////////////////////
 
+// ~ getAlumnosByMateria
+
+router.get("/getAlumnosByMateria/:idmateria", (req, res)=>{
+    var idmateria = req.params.idmateria
+    var sql = "CALL stp_select_alumnos_by_materia(?)"
+    var parametros = [idmateria]
+    conn.query(sql,parametros, (err, result)=>{
+        if(err){
+            console.log("ERROR EN CONSULTA: ", err)
+            res.send(JSON.stringify("ERROR EN CONSULTA: " + err));
+        }else{
+            console.log(result[0]);
+            res.send(result[0]);
+        }
+    })
+})
+
+////////////////////////////////////////////////////////////////////
+
 //GETUSERBYID
 
 router.get('/getmoviebyid/:ID', function(req, res){

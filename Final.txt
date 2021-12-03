@@ -53,7 +53,7 @@ Observaciones
  VampiMaestro App ✔
 
  - select_materia_by_maestro (detalle - trae los ids de las materias que tiene un profe) - se manda matricula ✔ ✔
- - select_alumnos_by_materia (detalle - trae las matriculas de los alumnos por materia) - se manda id ✔
+ - select_alumnos_by_materia (detalle - trae las matriculas de los alumnos por materia) - se manda id ✔ ✔
  - select_calif (detalle - trae el detalle de un alumno por materia) - se manda idmateria y martricula ✔
  - update_calif (detalle - actualiza las califs de un alumno por materia) - se manda matricula, idmateria, y califs ✔
 
@@ -89,6 +89,11 @@ EditUser(PUT): http://localhost:3000/api/editUser
 getMateriaByAlumno(GET): http://localhost:3000/api/getMateriaByAlumno/71462
 
 getMateriaByMaestro(GET): http://localhost:3000/api/getMateriaByMaestro/70000
+
+getAlumnosByMateria(GET): http://localhost:3000/api/getAlumnosByMateria/1
+
+
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 												PLAn
 
