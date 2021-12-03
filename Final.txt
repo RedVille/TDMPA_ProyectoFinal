@@ -114,7 +114,9 @@ getMateriaById(GET): http://localhost:3000/api/getMateriaById/3
 												UI mockups
 COMUNES
 - Inicio de sesión
+- Perfil
 - Editar perfil
+- Menú principal
 
 ALUMNO
 - Listado de las materias que tiene
