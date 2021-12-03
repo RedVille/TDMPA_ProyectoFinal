@@ -113,21 +113,21 @@ getMateriaById(GET): http://localhost:3000/api/getMateriaById/3
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 												UI mockups
 COMUNES
-- Inicio de sesión
-- Perfil
-- Editar perfil
-- Menú principal
+- Inicio de sesión ✔
+- Perfil ✔
+- Editar perfil ✔
+- Menú principal ✔
 
 ALUMNO
-- Listado de las materias que tiene
-- Detalle de una materia con calif
+- Listado de las materias que tiene ✔
+- Detalle de una materia con calif ✔
 
 MAESTRO
-- listado de materias que imparte
-- detalle de la materia
-    - listado de alumnos por materia
-- detalle de alumno
-    - editar calif parcial
+- listado de materias que imparte ✔
+- detalle de la materia ✔
+    - listado de alumnos por materia ✔
+- detalle de alumno ✔
+    - editar calif parcial ✔
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 												PLAn
