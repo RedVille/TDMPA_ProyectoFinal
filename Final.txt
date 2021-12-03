@@ -42,13 +42,13 @@ Observaciones
 
  												PROCEDIMIENTOS ALMACENADOS ✔
 
- VampiCompartido ✔
+ VampiCompartido ✔ ✔
  - login (mandamos matricula y contraseña, retorna el usuario completo o nada) ✔ ✔
  - editar_usuario ✔ ✔
 
- VampiAlumnos App ✔
+ VampiAlumnos App ✔ ✔
 
- - select_materia_by_alumno (detalle - trae los ids de las materias que tiene un alumno) - se manda matricula ✔
+ - select_materia_by_alumno (detalle - trae los ids de las materias que tiene un alumno) - se manda matricula ✔ ✔
 
  VampiMaestro App ✔
 
