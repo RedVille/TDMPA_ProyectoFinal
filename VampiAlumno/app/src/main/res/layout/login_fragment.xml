@@ -6,70 +6,71 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.login.LoginFragment"
-        android:background="@color/background">
+        android:background="@color/background"
+        tools:context=".presentation.login.LoginFragment">
 
         <TextView
             android:id="@+id/txvTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/abrilfatfaceregular"
             android:text="@string/title_login"
             android:textAlignment="center"
             android:textColor="@color/font1"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/guideline"
+            android:textSize="30sp"
             app:layout_constraintBottom_toTopOf="@id/edtMatricula"
-            android:fontFamily="@font/abrilfatfaceregular"
-            android:textSize="30sp"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline" />
+
         <ImageView
             android:id="@+id/imgVampiLogo1"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@drawable/ic_vampi_logo"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/txvTitle"
             app:layout_constraintEnd_toStartOf="@id/txvTitle"
-            app:layout_constraintTop_toTopOf="@id/txvTitle"
-            app:layout_constraintBottom_toBottomOf="@id/txvTitle"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txvTitle" />
+
         <EditText
             android:id="@+id/edtMatricula"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/rounded_edt"
-            android:hint="@string/hint_matricula"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="@id/edtContrasena"
-            app:layout_constraintTop_toBottomOf="@id/txvTitle"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            />
+            android:background="@drawable/rounded_edt"
+            android:hint="@string/hint_matricula"
+            app:layout_constraintBottom_toBottomOf="@id/edtContrasena"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvTitle" />
+
         <EditText
             android:id="@+id/edtContrasena"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/rounded_edt"
-            android:hint="@string/hint_matricula"
-            app:layout_constraintStart_toStartOf="@id/edtMatricula"
-            app:layout_constraintEnd_toEndOf="@id/edtMatricula"
-            app:layout_constraintBottom_toTopOf="@id/btnDoLogin"
-            app:layout_constraintTop_toBottomOf="@id/edtMatricula"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"
-            />
+            android:background="@drawable/rounded_edt"
+            android:hint="@string/hint_matricula"
+            app:layout_constraintBottom_toTopOf="@id/btnDoLogin"
+            app:layout_constraintEnd_toEndOf="@id/edtMatricula"
+            app:layout_constraintStart_toStartOf="@id/edtMatricula"
+            app:layout_constraintTop_toBottomOf="@id/edtMatricula" />
 
         <Button
             android:id="@+id/btnDoLogin"
-            android:backgroundTint="@color/rojito"
-            android:text="@string/btn_login"
-            android:fontFamily="@font/opensanslight"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            app:layout_constraintStart_toStartOf="@id/edtMatricula"
-            app:layout_constraintEnd_toEndOf="@id/edtMatricula"
-            app:layout_constraintBottom_toBottomOf="@id/guideline1"
+            android:backgroundTint="@color/rojito"
+            android:fontFamily="@font/opensanslight"
+            android:text="@string/btn_login"
             android:textAllCaps="false"
-            android:textSize="18sp"/>
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/edtMatricula"
+            app:layout_constraintStart_toStartOf="@id/edtMatricula" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline"

@@ -6,138 +6,149 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.subject.detail.SubjectDetailFragment"
-        android:background="@color/background">
+        android:background="@color/background"
+        tools:context=".presentation.subject.detail.SubjectDetailFragment">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/secondary"
-            android:layout_margin="40dp">
+            android:layout_margin="40dp"
+            android:background="@color/secondary">
+
             <TextView
                 android:id="@+id/txvDetailSubjectTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/abrilfatfaceregular"
                 android:text="Back End"
                 android:textAlignment="center"
                 android:textColor="@color/font1"
-                android:fontFamily="@font/abrilfatfaceregular"
                 android:textSize="30sp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/imgDetailSubject"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/imgDetailSubject"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <ImageView
                 android:id="@+id/imgDetailSubject"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/txvDetailDescription"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txvDetailSubjectTitle"
-                app:layout_constraintBottom_toTopOf="@id/txvDetailDescription"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txvDetailSubjectTitle" />
+
             <TextView
                 android:id="@+id/txvDetailDescription"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/imgDetailSubject"
-                app:layout_constraintBottom_toTopOf="@id/txvDetailHorario"
-                tools:text="@tools:sample/lorem/random"
-                android:textColor="@color/font1"
+                android:layout_margin="25dp"
                 android:fontFamily="@font/opensanslight"
-                android:layout_margin="25dp"/>
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toTopOf="@id/txvDetailHorario"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgDetailSubject"
+                tools:text="@tools:sample/lorem/random" />
+
             <TextView
                 android:id="@+id/txvDetailHorario"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
-                app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
-                app:layout_constraintTop_toBottomOf="@id/txvDetailDescription"
-                app:layout_constraintBottom_toTopOf="@id/txvCalifs"
-                tools:text="Horario: Lunes 7:00pm-9:00pm"
                 android:fontFamily="@font/opensanslight"
-                android:textColor="@color/font1" />
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toTopOf="@id/txvCalifs"
+                app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
+                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
+                app:layout_constraintTop_toBottomOf="@id/txvDetailDescription"
+                tools:text="Horario: Lunes 7:00pm-9:00pm" />
+
             <TextView
                 android:id="@+id/txvCalifs"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:text="Calificaciones"
                 android:textAlignment="center"
-                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
-                app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
-                app:layout_constraintTop_toBottomOf="@id/txvDetailHorario"
+                android:textColor="@color/font1"
                 app:layout_constraintBottom_toTopOf="@id/txvParcial1"
-                android:fontFamily="@font/opensanslight"/>
+                app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
+                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
+                app:layout_constraintTop_toBottomOf="@id/txvDetailHorario" />
+
             <TextView
                 android:id="@+id/txvParcial1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:text="Parcial 1"
                 android:textAlignment="center"
-                android:fontFamily="@font/opensanslight"
-                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toTopOf="@id/txvP1"
                 app:layout_constraintEnd_toStartOf="@id/txvParcial2"
-                app:layout_constraintTop_toBottomOf="@id/txvCalifs"
-                app:layout_constraintBottom_toTopOf="@id/txvP1"/>
+                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
+                app:layout_constraintTop_toBottomOf="@id/txvCalifs" />
+
             <TextView
                 android:id="@+id/txvParcial2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:text="Parcial 2"
                 android:textAlignment="center"
-                android:fontFamily="@font/opensanslight"
-                app:layout_constraintStart_toEndOf="@id/txvParcial1"
+                android:textColor="@color/font1"
                 app:layout_constraintEnd_toStartOf="@id/txvParcial3"
-                app:layout_constraintTop_toTopOf="@id/txvParcial1"/>
+                app:layout_constraintStart_toEndOf="@id/txvParcial1"
+                app:layout_constraintTop_toTopOf="@id/txvParcial1" />
+
             <TextView
                 android:id="@+id/txvParcial3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:text="Parcial 3"
                 android:textAlignment="center"
-                android:fontFamily="@font/opensanslight"
-                app:layout_constraintStart_toEndOf="@id/txvParcial2"
+                android:textColor="@color/font1"
                 app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
-                app:layout_constraintTop_toTopOf="@id/txvParcial1"/>
+                app:layout_constraintStart_toEndOf="@id/txvParcial2"
+                app:layout_constraintTop_toTopOf="@id/txvParcial1" />
 
             <TextView
                 android:id="@+id/txvP1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:text="7.7"
                 android:textAlignment="center"
-                android:fontFamily="@font/opensanslight"
-                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/txvP2"
-                app:layout_constraintTop_toBottomOf="@id/txvParcial1"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
+                app:layout_constraintTop_toBottomOf="@id/txvParcial1" />
+
             <TextView
                 android:id="@+id/txvP2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:text="7.7"
                 android:textAlignment="center"
-                android:fontFamily="@font/opensanslight"
-                app:layout_constraintStart_toEndOf="@id/txvP1"
+                android:textColor="@color/font1"
                 app:layout_constraintEnd_toStartOf="@id/txvP3"
-                app:layout_constraintTop_toTopOf="@id/txvP1"/>
+                app:layout_constraintStart_toEndOf="@id/txvP1"
+                app:layout_constraintTop_toTopOf="@id/txvP1" />
+
             <TextView
                 android:id="@+id/txvP3"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:text="7.7"
                 android:textAlignment="center"
-                android:fontFamily="@font/opensanslight"
-                app:layout_constraintStart_toEndOf="@id/txvP2"
+                android:textColor="@color/font1"
                 app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
-                app:layout_constraintTop_toTopOf="@id/txvP1"/>
+                app:layout_constraintStart_toEndOf="@id/txvP2"
+                app:layout_constraintTop_toTopOf="@id/txvP1" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 

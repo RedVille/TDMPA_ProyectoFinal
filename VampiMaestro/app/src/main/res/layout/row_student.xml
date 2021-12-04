@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/secondary">
+
+            <TextView
+                android:id="@+id/txvName"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/opensanslight"
+                android:lines="1"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintEnd_toStartOf="@id/txvP1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Nombre" />
+
+            <TextView
+                android:id="@+id/txvP1"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/opensanslight"
+                android:lines="1"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintEnd_toStartOf="@id/txvP2"
+                app:layout_constraintStart_toEndOf="@id/txvName"
+                app:layout_constraintTop_toTopOf="@id/txvName"
+                tools:text="0.0" />
+
+            <TextView
+                android:id="@+id/txvP2"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/opensanslight"
+                android:lines="1"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintEnd_toStartOf="@id/txvP3"
+                app:layout_constraintStart_toEndOf="@id/txvP1"
+                app:layout_constraintTop_toTopOf="@id/txvName"
+                tools:text="0.0" />
+
+            <TextView
+                android:id="@+id/txvP3"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/opensanslight"
+                android:lines="1"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/txvP2"
+                app:layout_constraintTop_toTopOf="@id/txvName"
+                tools:text="0.0" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
