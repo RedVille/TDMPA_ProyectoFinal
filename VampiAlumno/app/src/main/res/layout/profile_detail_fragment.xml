@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.profile.detail.ProfileDetailFragment"
+        android:background="@color/background">
+
+        <TextView
+            android:id="@+id/txvTitlePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            android:text="@string/btn_menu_perfil"
+            android:textSize="30sp"
+            android:fontFamily="@font/abrilfatfaceregular"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/imgPerfil"/>
+
+        <ImageView
+            android:id="@+id/imgPerfil"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvTitlePerfil"
+            app:layout_constraintBottom_toTopOf="@id/txvNombre"/>
+        
+        <ImageView
+            android:id="@+id/imgEditPerfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@id/imgPerfil"
+            app:layout_constraintEnd_toEndOf="@id/imgPerfil"
+            app:layout_constraintStart_toEndOf="@id/txvTitlePerfil"
+            android:src="@drawable/ic_edit"/>
+        
+        <TextView
+            android:id="@+id/txvNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/font1"
+            tools:text="Nombre Completo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txvMatricula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/txvCorreo"
+            app:layout_constraintTop_toBottomOf="@id/txvNombre"
+            android:textColor="@color/font1"
+            tools:text="Vampimatricula"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txvCorreo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvMatricula"
+            android:textColor="@color/font1"
+            tools:text="Vampicorreo"
+            android:textAlignment="center"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
