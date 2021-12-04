@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".presentation.menu.MenuFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/background">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/vampilogo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_vampi_logo2"
+            app:layout_constraintBottom_toTopOf="@id/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/abrilfatfaceregular"
+            android:text="@string/title_menu"
+            android:textColor="@color/font1"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_subjects"
+            app:layout_constraintEnd_toEndOf="@id/vampilogo"
+            app:layout_constraintStart_toStartOf="@id/vampilogo"
+            app:layout_constraintTop_toBottomOf="@id/vampilogo" />
+
+        <Button
+            android:id="@+id/btn_subjects"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/secondary"
+            android:fontFamily="@font/opensanslight"
+            android:text="@string/btn_menu_materias"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_profile"
+            app:layout_constraintEnd_toEndOf="@id/vampilogo"
+            app:layout_constraintStart_toStartOf="@id/vampilogo"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <Button
+            android:id="@+id/btn_profile"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:backgroundTint="@color/secondary"
+            android:fontFamily="@font/opensanslight"
+            android:text="@string/btn_menu_perfil"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_logout"
+            app:layout_constraintEnd_toEndOf="@id/vampilogo"
+            app:layout_constraintStart_toStartOf="@id/vampilogo"
+            app:layout_constraintTop_toBottomOf="@id/btn_subjects" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="300dp"
+            android:layout_height="80dp"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/secondary"
+            android:fontFamily="@font/opensanslight"
+            android:text="@string/btn_menu_logout"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@id/vampicopyright"
+            app:layout_constraintEnd_toEndOf="@id/vampilogo"
+            app:layout_constraintStart_toStartOf="@id/vampilogo"
+            app:layout_constraintTop_toBottomOf="@id/btn_profile" />
+
+        <TextView
+            android:id="@+id/vampicopyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/opensanslight"
+            android:text="@string/copyright"
+            android:textColor="@color/font1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/vampilogo"
+            app:layout_constraintStart_toStartOf="@id/vampilogo"
+            app:layout_constraintTop_toBottomOf="@id/btn_logout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

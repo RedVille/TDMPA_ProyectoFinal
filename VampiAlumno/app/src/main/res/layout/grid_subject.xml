@@ -30,7 +30,8 @@
                 android:textAlignment="center"
                 android:lines="1"
                 android:ellipsize="end"
-                tools:text="Subject Name"/>
+                tools:text="Subject Name"
+                android:fontFamily="@font/opensanslight"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>

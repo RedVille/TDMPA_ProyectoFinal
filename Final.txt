@@ -124,9 +124,9 @@ ALUMNO
 
 MAESTRO
 - listado de materias que imparte ✔ ✔
-- detalle de la materia ✔
+- detalle de la materia ✔ ✔
     - listado de alumnos por materia ✔
-- detalle de alumno ✔
+- detalle de alumno ✔ ✔
     - editar calif parcial ✔
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

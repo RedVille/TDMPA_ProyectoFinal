@@ -44,6 +44,7 @@
                 app:layout_constraintBottom_toTopOf="@id/txvDetailHorario"
                 tools:text="@tools:sample/lorem/random"
                 android:textColor="@color/font1"
+                android:fontFamily="@font/opensanslight"
                 android:layout_margin="25dp"/>
             <TextView
                 android:id="@+id/txvDetailHorario"
@@ -54,6 +55,7 @@
                 app:layout_constraintTop_toBottomOf="@id/txvDetailDescription"
                 app:layout_constraintBottom_toTopOf="@id/txvCalifs"
                 tools:text="Horario: Lunes 7:00pm-9:00pm"
+                android:fontFamily="@font/opensanslight"
                 android:textColor="@color/font1" />
             <TextView
                 android:id="@+id/txvCalifs"
@@ -65,7 +67,8 @@
                 app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
                 app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
                 app:layout_constraintTop_toBottomOf="@id/txvDetailHorario"
-                app:layout_constraintBottom_toTopOf="@id/txvParcial1"/>
+                app:layout_constraintBottom_toTopOf="@id/txvParcial1"
+                android:fontFamily="@font/opensanslight"/>
             <TextView
                 android:id="@+id/txvParcial1"
                 android:layout_width="0dp"
@@ -73,6 +76,7 @@
                 android:textColor="@color/font1"
                 android:text="Parcial 1"
                 android:textAlignment="center"
+                android:fontFamily="@font/opensanslight"
                 app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
                 app:layout_constraintEnd_toStartOf="@id/txvParcial2"
                 app:layout_constraintTop_toBottomOf="@id/txvCalifs"
@@ -84,6 +88,7 @@
                 android:textColor="@color/font1"
                 android:text="Parcial 2"
                 android:textAlignment="center"
+                android:fontFamily="@font/opensanslight"
                 app:layout_constraintStart_toEndOf="@id/txvParcial1"
                 app:layout_constraintEnd_toStartOf="@id/txvParcial3"
                 app:layout_constraintTop_toTopOf="@id/txvParcial1"/>
@@ -94,6 +99,7 @@
                 android:textColor="@color/font1"
                 android:text="Parcial 3"
                 android:textAlignment="center"
+                android:fontFamily="@font/opensanslight"
                 app:layout_constraintStart_toEndOf="@id/txvParcial2"
                 app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
                 app:layout_constraintTop_toTopOf="@id/txvParcial1"/>
@@ -105,6 +111,7 @@
                 android:textColor="@color/font1"
                 android:text="7.7"
                 android:textAlignment="center"
+                android:fontFamily="@font/opensanslight"
                 app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
                 app:layout_constraintEnd_toStartOf="@id/txvP2"
                 app:layout_constraintTop_toBottomOf="@id/txvParcial1"
@@ -116,6 +123,7 @@
                 android:textColor="@color/font1"
                 android:text="7.7"
                 android:textAlignment="center"
+                android:fontFamily="@font/opensanslight"
                 app:layout_constraintStart_toEndOf="@id/txvP1"
                 app:layout_constraintEnd_toStartOf="@id/txvP3"
                 app:layout_constraintTop_toTopOf="@id/txvP1"/>
@@ -126,6 +134,7 @@
                 android:textColor="@color/font1"
                 android:text="7.7"
                 android:textAlignment="center"
+                android:fontFamily="@font/opensanslight"
                 app:layout_constraintStart_toEndOf="@id/txvP2"
                 app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
                 app:layout_constraintTop_toTopOf="@id/txvP1"/>
