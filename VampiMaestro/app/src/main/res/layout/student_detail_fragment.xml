@@ -1,13 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.subject.studentdetail.StudentDetailFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:background="@color/background"
+        tools:context=".presentation.profile.detail.StudentDetailFragment">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imgPerfil"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toTopOf="@id/txvNombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txvNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/abrilfatfaceregular"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/txvMatricula"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imgPerfil"
+            tools:text="Nombre Completo" />
+
+        <TextView
+            android:id="@+id/txvMatricula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensanslight"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/txvCorreo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvNombre"
+            tools:text="@string/hint_matricula" />
+
+        <TextView
+            android:id="@+id/txvCorreo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensanslight"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/txvCalif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvMatricula"
+            tools:text="vampicorreo@vampiescuela.com" />
+
+        <TextView
+            android:id="@+id/txvCalif"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensanslight"
+            android:text="@string/calificaciones"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/crdCalif"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvCorreo" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/crdCalif"
+            android:layout_width="300dp"
+            android:layout_height="180dp"
+            android:backgroundTint="@color/secondary"
+            app:cardCornerRadius="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvCalif">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_edit"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvP1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="35dp"
+                    android:fontFamily="@font/opensanslight"
+                    android:text="@string/parcial_1"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvP2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvP2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/opensanslight"
+                    android:text="@string/parcial_2"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toTopOf="@id/tvP3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvP1" />
+
+                <TextView
+                    android:id="@+id/tvP3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="35dp"
+                    android:fontFamily="@font/opensanslight"
+                    android:text="@string/parcial_3"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvP2" />
+
+                <EditText
+                    android:id="@+id/etC1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/font1"
+                    android:color="@color/font1"
+                    android:hint="@string/c_default"
+                    android:textColor="@color/font1"
+                    android:textColorHint="@color/font1"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvP1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvP1"
+                    app:layout_constraintTop_toTopOf="@id/tvP1" />
+
+                <EditText
+                    android:id="@+id/etC2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/font1"
+                    android:color="@color/font1"
+                    android:hint="@string/c_default"
+                    android:textColor="@color/font1"
+                    android:textColorHint="@color/font1"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvP2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvP2"
+                    app:layout_constraintTop_toTopOf="@id/tvP2" />
+
+                <EditText
+                    android:id="@+id/etC3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/font1"
+                    android:color="@color/font1"
+                    android:hint="@string/c_default"
+                    android:textColor="@color/font1"
+                    android:textColorHint="@color/font1"
+                    android:textSize="15sp"
+                    app:layout_constraintBottom_toBottomOf="@id/tvP3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvP3"
+                    app:layout_constraintTop_toTopOf="@id/tvP3" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

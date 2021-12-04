@@ -7,19 +7,17 @@
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/drawable/ic_vampi_logo.xml" value="0.2630208333333333" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/drawable/ic_vampi_logo2.xml" value="0.2630208333333333" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/drawable/rounded_btn.xml" value="0.2630208333333333" />
+        <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/drawable/rounded_card.xml" value="0.2640625" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/drawable/rounded_edt.xml" value="0.2630208333333333" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/activity_main.xml" value="0.24166666666666667" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/edit_profile_fragment.xml" value="0.264" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/fragment_menu.xml" value="0.264" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/grid_subject.xml" value="0.246875" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/login_fragment.xml" value="0.246875" />
-        <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/student_detail_fragment.xml" value="0.246875" />
-        <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/subject_detail_fragment.xml" value="0.246875" />
+        <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/row_student.xml" value="0.24791666666666667" />
+        <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/student_detail_fragment.xml" value="0.264" />
+        <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/subject_detail_fragment.xml" value="0.4" />
         <entry key="..\:/CHALLE/5to Semestre/android/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/subjects_fragment.xml" value="0.246875" />
-        <entry key="..\:/Users/franp/OneDrive/Documentos/GitHub/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/edit_profile_fragment.xml" value="0.14990942028985507" />
-        <entry key="..\:/Users/franp/OneDrive/Documentos/GitHub/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/fragment_menu.xml" value="0.14990942028985507" />
-        <entry key="..\:/Users/franp/OneDrive/Documentos/GitHub/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/grid_subject.xml" value="0.1933876811594203" />
-        <entry key="..\:/Users/franp/OneDrive/Documentos/GitHub/TDMPA_ProyectoFinal/VampiMaestro/app/src/main/res/layout/row_student.xml" value="0.264" />
       </map>
     </option>
   </component>

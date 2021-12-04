@@ -1,13 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.subject.subjectdetail.SubjectDetailFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:background="@color/background"
+        tools:context=".presentation.subject.detail.SubjectDetailFragment">
 
-</FrameLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="40dp"
+            android:background="@color/secondary">
+
+            <TextView
+                android:id="@+id/txvDetailSubjectTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/abrilfatfaceregular"
+                android:text="Back End"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@id/imgDetailSubject"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgDetailSubject"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                app:layout_constraintBottom_toTopOf="@id/txvDetailDescription"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txvDetailSubjectTitle" />
+
+            <TextView
+                android:id="@+id/txvDetailDescription"
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_margin="25dp"
+                android:fontFamily="@font/opensanslight"
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toTopOf="@id/txvDetailHorario"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgDetailSubject"
+                tools:text="@tools:sample/lorem/random" />
+
+            <TextView
+                android:id="@+id/txvDetailHorario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensanslight"
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toTopOf="@id/txAlumno"
+                app:layout_constraintEnd_toEndOf="@id/txvDetailDescription"
+                app:layout_constraintStart_toStartOf="@id/txvDetailDescription"
+                app:layout_constraintTop_toBottomOf="@id/txvDetailDescription"
+                tools:text="Horario: Lunes 7:00pm-9:00pm" />
+
+            <TextView
+                android:id="@+id/txAlumno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensanslight"
+                android:text="Alumno"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toBottomOf="@id/txvParcial1"
+                app:layout_constraintEnd_toStartOf="@id/txvParcial1"
+                app:layout_constraintStart_toStartOf="@id/txvDetailHorario"
+                app:layout_constraintTop_toTopOf="@id/txvParcial1" />
+
+            <TextView
+                android:id="@+id/txvParcial1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensanslight"
+                android:text="P1"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintBottom_toTopOf="@id/swp_refresh"
+                app:layout_constraintEnd_toStartOf="@id/txvParcial2"
+                app:layout_constraintStart_toEndOf="@id/txAlumno"
+                app:layout_constraintTop_toBottomOf="@id/txAlumno" />
+
+            <TextView
+                android:id="@+id/txvParcial2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensanslight"
+                android:text="P2"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintEnd_toStartOf="@id/txvParcial3"
+                app:layout_constraintStart_toEndOf="@id/txvParcial1"
+                app:layout_constraintTop_toTopOf="@id/txvParcial1" />
+
+            <TextView
+                android:id="@+id/txvParcial3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensanslight"
+                android:text="P3"
+                android:textAlignment="center"
+                android:textColor="@color/font1"
+                app:layout_constraintEnd_toEndOf="@id/swp_refresh"
+                app:layout_constraintStart_toEndOf="@id/txvParcial2"
+                app:layout_constraintTop_toTopOf="@id/txvParcial1" />
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swp_refresh"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txvParcial1">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_students"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background"
+                    android:padding="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/row_student" />
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
