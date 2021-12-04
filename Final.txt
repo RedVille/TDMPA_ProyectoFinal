@@ -120,7 +120,7 @@ COMUNES
 
 ALUMNO
 - Listado de las materias que tiene ✔ ✔
-- Detalle de una materia con calif ✔
+- Detalle de una materia con calif ✔ ✔
 
 MAESTRO
 - listado de materias que imparte ✔ ✔
