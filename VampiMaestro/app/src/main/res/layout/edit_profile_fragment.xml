@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.menu.MenuFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="30dp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_profile_picture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
+            app:layout_constraintEnd_toStartOf="@id/iv_profile_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_profile_picture" />
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_next"
+            app:layout_constraintBottom_toBottomOf="@id/iv_profile_picture"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_profile_picture"
+            app:layout_constraintTop_toTopOf="@id/iv_profile_picture" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/font1"
+            android:color="@color/font1"
+            android:hint="@string/nombre"
+            android:textColor="@color/font1"
+            android:textColorHint="@color/font1"
+            app:layout_constraintBottom_toTopOf="@id/et_lastname1"
+            app:layout_constraintEnd_toEndOf="@id/iv_profile_picture"
+            app:layout_constraintStart_toStartOf="@id/iv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile_picture"
+            tools:text="@string/nombre" />
+
+        <EditText
+            android:id="@+id/et_lastname1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/font1"
+            android:color="@color/font1"
+            android:hint="@string/ap1"
+            android:textColor="@color/font1"
+            android:textColorHint="@color/font1"
+            app:layout_constraintBottom_toTopOf="@id/et_lastname2"
+            app:layout_constraintEnd_toEndOf="@id/iv_profile_picture"
+            app:layout_constraintStart_toStartOf="@id/iv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@id/et_name"
+            tools:text="@string/ap1" />
+
+        <EditText
+            android:id="@+id/et_lastname2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/font1"
+            android:color="@color/font1"
+            android:hint="@string/ap2"
+            android:textColor="@color/font1"
+            android:textColorHint="@color/font1"
+            app:layout_constraintBottom_toTopOf="@id/et_email"
+            app:layout_constraintEnd_toEndOf="@id/iv_profile_picture"
+            app:layout_constraintStart_toStartOf="@id/iv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@id/et_lastname1"
+            tools:text="@string/ap2" />
+
+        <EditText
+            android:id="@+id/et_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="150dp"
+            android:backgroundTint="@color/font1"
+            android:color="@color/font1"
+            android:hint="@string/correo"
+            android:textColor="@color/font1"
+            android:textColorHint="@color/font1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/iv_profile_picture"
+            app:layout_constraintStart_toStartOf="@id/iv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@id/et_lastname2"
+            tools:text="@string/correo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
