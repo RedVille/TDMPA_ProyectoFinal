@@ -1,32 +1,53 @@
 package com.vampi.vampialumno.presentation.login
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.vampi.vampialumno.R
+import com.vampi.vampialumno.core.extension.failure
+import com.vampi.vampialumno.core.extension.observe
+import com.vampi.vampialumno.core.presentation.BaseFragment
+import com.vampi.vampialumno.core.presentation.BaseViewState
+import com.vampi.vampialumno.databinding.LoginFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
+import kotlinx.coroutines.DelicateCoroutinesApi
 
-class LoginFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = LoginFragment()
+@AndroidEntryPoint
+@WithFragmentBindings
+@DelicateCoroutinesApi
+class LoginFragment : BaseFragment(R.layout.login_fragment) {
+
+    private lateinit var binding: LoginFragmentBinding
+
+    private val loginViewModel by viewModels<LoginViewModel>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        loginViewModel.apply {
+            observe(state, ::onViewStateChanged)
+            failure(failure, ::handleFailure)
+        }
     }
 
-    private lateinit var viewModel: LoginViewModel
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.login_fragment, container, false)
+    override fun onResume() {
+        super.onResume()
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewStateChanged(state: BaseViewState?) {
+        super.onViewStateChanged(state)
     }
+
+    override fun setBinding(view: View) {
+        binding = LoginFragmentBinding.bind(view)
+
+        setHasOptionsMenu(true)
+
+        binding.lifecycleOwner = this
+
+        //baseActivity.setBottomNavVisibility(View.VISIBLE)
+    }
+
 
 }

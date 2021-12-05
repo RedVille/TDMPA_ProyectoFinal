@@ -31,7 +31,7 @@ abstract class BaseActivity : AppCompatActivity(), OnFailure {
         }
     }
 
-    abstract fun setUpNavigation(navController: NavController)
+    //abstract fun setUpNavigation(navController: NavController)
 
     override fun handleFailure(failure: Failure?) {
         showProgress(false)
@@ -39,7 +39,7 @@ abstract class BaseActivity : AppCompatActivity(), OnFailure {
 
     abstract fun showProgress(show: Boolean)
 
-    abstract fun setBottomNavVisibility(visibility: Int)
+    //abstract fun setBottomNavVisibility(visibility: Int)
 
     abstract fun setBinding()
 
