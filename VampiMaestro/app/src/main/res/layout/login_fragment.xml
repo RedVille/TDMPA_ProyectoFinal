@@ -1,10 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context=".presentation.login.LoginFragment">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
 
+        <TextView
+            android:id="@+id/txvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/abrilfatfaceregular"
+            android:text="@string/title_login"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/edtMatricula"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/guideline" />
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imgVampiLogo1"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/ic_vampi_logo"
+            app:layout_constraintBottom_toBottomOf="@id/txvTitle"
+            app:layout_constraintEnd_toStartOf="@id/txvTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txvTitle" />
+
+        <EditText
+            android:id="@+id/edtMatricula"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/rounded_edt"
+            android:hint="@string/hint_matricula"
+            android:textColor="@color/background"
+            android:textColorHint="@color/background"
+            app:layout_constraintBottom_toBottomOf="@id/edtContrasena"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvTitle" />
+
+        <EditText
+            android:id="@+id/edtContrasena"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:background="@drawable/rounded_edt"
+            android:hint="@string/hint_contrasena"
+            android:textColor="@color/background"
+            android:textColorHint="@color/background"
+            app:layout_constraintBottom_toTopOf="@id/btnDoLogin"
+            app:layout_constraintEnd_toEndOf="@id/edtMatricula"
+            app:layout_constraintStart_toStartOf="@id/edtMatricula"
+            app:layout_constraintTop_toBottomOf="@id/edtMatricula" />
+
+        <Button
+            android:id="@+id/btnDoLogin"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/rojito"
+            android:fontFamily="@font/opensanslight"
+            android:text="@string/btn_login"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="@id/edtMatricula"
+            app:layout_constraintStart_toStartOf="@id/edtMatricula" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="160dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="550dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -41,7 +41,7 @@ router.get("/getUserByMatricula/:matricula", (req, res)=>{
 
 // ! login
 
-router.post("/login", (req, res) => {
+router.get("/login", (req, res) => {
     var usuario = req.body
 
     var sql = "CALL stp_login(?,?)"
@@ -155,7 +155,7 @@ router.get("/getAlumnosByMateria/:idmateria", (req, res)=>{
 
 // & getCalif
 
-router.post('/getCalif', function(req, res){
+router.get('/getCalif', function(req, res){
 
     var usuario = req.body
     var sql = "CALL stp_select_calif(?,?)"

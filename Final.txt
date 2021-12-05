@@ -71,7 +71,7 @@ http://localhost:3000/api/
 
 getUserByMatricula(GET): http://localhost:3000/api/getUserByMatricula/70561
 
-login(POST): http://localhost:3000/api/login
+login(GET): http://localhost:3000/api/login
 {
     "matricula": "70561",
     "contrasena": "123"
@@ -93,7 +93,7 @@ getMateriaByMaestro(GET): http://localhost:3000/api/getMateriaByMaestro/70000
 
 getAlumnosByMateria(GET): http://localhost:3000/api/getAlumnosByMateria/1
 
-getCalif(POST): http://localhost:3000/api/getCalif
+getCalif(GET): http://localhost:3000/api/getCalif
 {
     "idmateria": 2,
     "matricula": "70561"

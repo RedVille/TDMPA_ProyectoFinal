@@ -1,13 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.profile.detail.ProfileDetailFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:background="@color/background"
+        tools:context=".presentation.profile.detail.ProfileDetailFragment">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/txvTitlePerfil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/abrilfatfaceregular"
+            android:text="@string/btn_menu_perfil"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toTopOf="@id/imgPerfil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgPerfil"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toTopOf="@id/txvNombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvTitlePerfil" />
+
+        <ImageView
+            android:id="@+id/imgEditPerfil"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintBottom_toBottomOf="@id/imgPerfil"
+            app:layout_constraintEnd_toEndOf="@id/imgPerfil"
+            app:layout_constraintStart_toEndOf="@id/txvTitlePerfil" />
+
+        <TextView
+            android:id="@+id/txvNombre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensanslight"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Nombre Completo" />
+
+        <TextView
+            android:id="@+id/txvMatricula"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensanslight"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            app:layout_constraintBottom_toTopOf="@id/txvCorreo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvNombre"
+            tools:text="Vampimatricula" />
+
+        <TextView
+            android:id="@+id/txvCorreo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/opensanslight"
+            android:textAlignment="center"
+            android:textColor="@color/font1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txvMatricula"
+            tools:text="Vampicorreo" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

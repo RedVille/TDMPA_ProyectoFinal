@@ -22,7 +22,7 @@ abstract class BaseFragment(@LayoutRes layoutId: Int) : Fragment(layoutId), OnFa
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        baseActivity.setUpNavigation(navController)
+        //baseActivity.setUpNavigation(navController)
 
         baseActivity.window.statusBarColor = resources.getColor(statusBarColor())
         baseActivity.window.setBackgroundDrawable(windowBackgroundDrawable())
