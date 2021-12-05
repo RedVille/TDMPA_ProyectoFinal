@@ -32,43 +32,7 @@ router.get("/getUserByMatricula/:matricula", (req, res)=>{
             res.send(JSON.stringify("ERROR EN CONSULTA: " + err));
         }else{
             console.log(result[0]);
-            res.send(result[0][0]);
-        }
-    })
-})
-
-////////////////////////////////////////////////////////////////////
-
-// ! login
-
-router.get("/login", (req, res) => {
-    var usuario = req.body
-
-    var sql = "CALL stp_login(?,?)"
-    var parametros = [usuario.matricula, usuario.contrasena]
-    conn.query(sql,parametros, (err, result)=>{
-        if(err){
-            console.log("ERROR EN CONSULTA: ",err)
-            res.send(JSON.stringify("ERROR EN CONSULTA:"+err));
-        }
-        else{
-            console.log(result[0]);
-            var resultado = result[0]
-            if(resultado[0] != undefined){
-                var respuesta = {
-                    mensaje: "Bienvenido(a)",
-                    login: true,
-                    matricula: resultado[0].matricula
-                }
-                res.send(respuesta);
-            }else{
-                var respuesta = {
-                    mensaje: "Credenciales incorrectas",
-                    login: false,
-                    matricula: 0
-                }
-                res.send(respuesta);
-            }
+            res.send(result[0]);
         }
     })
 })

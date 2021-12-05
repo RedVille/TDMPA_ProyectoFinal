@@ -71,12 +71,6 @@ http://localhost:3000/api/
 
 getUserByMatricula(GET): http://localhost:3000/api/getUserByMatricula/70561
 
-login(GET): http://localhost:3000/api/login
-{
-    "matricula": "70561",
-    "contrasena": "123"
-}
-
 editUser(PUT): http://localhost:3000/api/editUser
 {
     "matricula": "70561",

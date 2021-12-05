@@ -1,4 +1,17 @@
 package com.vampi.vampimaestro.data.api
 
+import androidx.room.Update
+import com.vampi.vampimaestro.data.dto.UsuariosResponse
+import com.vampi.vampimaestro.domain.model.Usuario
+import retrofit2.Call
+import retrofit2.http.*
+
 interface UsuarioApi {
+
+    //@GET("getUserByMatricula/{matricula}")
+    //fun getUserByMatricula(@Path("matricula") matricula: Int): Call<UsuariosResponse>
+
+    //@PUT("editUser")
+    //fun editUser(@Body matricula: Int, ): Call<UsuariosResponse>
+
 }

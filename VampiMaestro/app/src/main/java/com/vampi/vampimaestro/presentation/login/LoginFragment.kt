@@ -28,6 +28,8 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
         loginViewModel.apply {
             observe(state, ::onViewStateChanged)
             failure(failure, ::handleFailure)
+
+            //getUsuarioByMatricula(70561)
         }
     }
 
