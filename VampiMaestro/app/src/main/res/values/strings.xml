@@ -21,5 +21,10 @@
     <string name="ap1">Vampi apellido paterno</string>
     <string name="ap2">Vampi apellido materno</string>
     <string name="correo">Vampi correo</string>
+    <string name="calificaciones">Calificaciones</string>
+    <string name="parcial_1">Parcial 1</string>
+    <string name="parcial_3">Parcial 3</string>
+    <string name="parcial_2">Parcial 2</string>
+    <string name="c_default">0.0</string>
 
 </resources>
