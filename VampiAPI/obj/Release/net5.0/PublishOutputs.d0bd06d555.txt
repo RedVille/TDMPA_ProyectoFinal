@@ -1,0 +1,17 @@
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\VampiAPI.exe
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\appsettings.Development.json
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\appsettings.json
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\VampiAPI.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\VampiAPI.deps.json
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\VampiAPI.runtimeconfig.json
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\VampiAPI.pdb
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\Microsoft.OpenApi.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\System.Data.SqlClient.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\runtimes\win-arm64\native\sni.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\runtimes\win-x64\native\sni.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\runtimes\win-x86\native\sni.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\franp\OneDrive\Documentos\GitHub\TDMPA_ProyectoFinal\VampiAPI\obj\Release\net5.0\PubTmp\Out\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
