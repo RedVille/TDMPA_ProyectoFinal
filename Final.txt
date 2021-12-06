@@ -72,11 +72,11 @@ https://webapidrivervampi.azurewebsites.net/api/
 -------------------------------------------DETELLE ALUMNO-------------------------------------------------
 
 GET ALL
-GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno
+GET -> DetalleAlumno/
 
 
 UPDATE CALIFS
-PUT -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno
+PUT -> DetalleAlumno/
 {
     "idmateria": 2,
     "matricula": "70561"
@@ -84,48 +84,48 @@ PUT -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno
 
 
 GET DETALLE ALUMNO BY MATRICULA
-GET -> https://webapidrivervampi.azurewebsites.net​/api​/DetalleAlumno​/matricula​/{matricula}
+GET -> DetalleAlumno​/matricula​/{matricula}
 
 
 GET DETALLE ALUMNO BY ID_MATERIA
-GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno/idMateria/{idMateria}
+GET -> DetalleAlumno/idMateria/{idMateria}
 
 
 GET DETALLE ALUMNO BY MATRICULA Y ID_MATERIA
-GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno/{matricula}/{idMateria}
+GET -> DetalleAlumno/{matricula}/{idMateria}
 
 
 -----------------------------------------------------------------------------------------------------------
 -------------------------------------------DETELLE MAESTRO-------------------------------------------------
 
 GET ALL
-GET -> https://webapidrivervampi.azurewebsites.net​/api​/DetalleMaestro
+GET -> DetalleMaestro/
 
 
 GET DETALLE MAESTRO BY MATRICULA
-GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleMaestro/{matricula}
+GET -> DetalleMaestro/{matricula}
 
 
 -----------------------------------------------------------------------------------------------------------
 ------------------------------------------------MATERIA-----------------------------------------------------
 
 GET ALL
-GET -> https://webapidrivervampi.azurewebsites.net​/api/Materia
+GET -> Materia/
 
 
 GET MATERIA BY ID_MATERIA
-GET -> https://webapidrivervampi.azurewebsites.net/api/Materia/{idMateria}
+GET -> Materia/{idMateria}
 
 
 -----------------------------------------------------------------------------------------------------------
 ------------------------------------------------USUARIO-----------------------------------------------------
 
 GET ALL
-GET -> https://webapidrivervampi.azurewebsites.net​/api/Usuario
+GET -> Usuario/
 
 
 UPDATE USUARIO
-PUT -> https://webapidrivervampi.azurewebsites.net/api/Usuario
+PUT -> Usuario/
 {
     "matricula": "70561",
     "foto": "",
@@ -137,7 +137,7 @@ PUT -> https://webapidrivervampi.azurewebsites.net/api/Usuario
 
 
 GET USUARIO BY MATRICULA
-GET -> https://webapidrivervampi.azurewebsites.net​/api/Usuario/{matricula}
+GET -> Usuario/{matricula}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
