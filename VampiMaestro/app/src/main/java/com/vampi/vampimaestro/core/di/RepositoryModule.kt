@@ -1,5 +1,6 @@
 package com.vampi.vampimaestro.core.di
 
+import com.vampi.vampimaestro.core.plataform.AuthManager
 import com.vampi.vampimaestro.core.plataform.NetworkHandler
 import com.vampi.vampimaestro.data.api.UsuarioApi
 import com.vampi.vampimaestro.data.source.UsuarioRepositoryImpl
@@ -19,11 +20,13 @@ object RepositoryModule {
     @Singleton
     fun provideUsuarioRepository(
         apiProvider: ApiProvider,
-        networkHandler: NetworkHandler
+        networkHandler: NetworkHandler,
+        authManager: AuthManager
     ): UsuarioRepository =
         UsuarioRepositoryImpl(
             apiProvider.getEndpoint(UsuarioApi::class.java),
-            networkHandler
+            networkHandler,
+            authManager
         )
 
 }

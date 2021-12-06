@@ -2,7 +2,6 @@ package com.vampi.vampimaestro.presentation.login
 
 import android.os.Bundle
 import android.view.View
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import com.vampi.vampimaestro.R
 import com.vampi.vampimaestro.core.extension.failure
@@ -28,17 +27,25 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
         loginViewModel.apply {
             observe(state, ::onViewStateChanged)
             failure(failure, ::handleFailure)
-
-            getUsuarioByMatricula(70561)
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 
     override fun onViewStateChanged(state: BaseViewState?) {
         super.onViewStateChanged(state)
+        when (state) {
+            is LoginViewState.UsuarioReceived -> {
+                if (state.usuarios.isNotEmpty()){
+                    if (loginViewModel.validatePassword(state.usuarios[0]) && loginViewModel.validateType(state.usuarios[0])) {
+                        loginViewModel.setLocalUser(state.usuarios[0])
+                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToMenuFragment())
+                    }
+                    else
+                        showToast("Credeciales Incorrectas D:")
+                }
+                else
+                    showToast("Usuario no encontrado :(")
+            }
+        }
     }
 
     override fun setBinding(view: View) {
@@ -46,9 +53,21 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
 
         setHasOptionsMenu(true)
 
-        binding.lifecycleOwner = this
+        binding.apply {
+            lifecycleOwner = this@LoginFragment
 
-        //baseActivity.setBottomNavVisibility(View.VISIBLE)
+            vm = loginViewModel
+
+            btnDoLogin.setOnClickListener { doLogin() }
+        }
+
+    }
+
+    private fun doLogin() {
+        if (loginViewModel.validateEmpties()) {
+            if (loginViewModel.validateMatricula()) loginViewModel.getUsuarioByMatricula()
+            else showToast("Matricula invalida")
+        } else showToast("Campos vacios")
     }
 
 }

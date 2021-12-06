@@ -66,12 +66,66 @@ VampiUser ✔ ✔
  - select_user_by_matricula ✔ ✔
 
 ////////////////////////////////////////////RUTA BASE PARA LA API/////////////////////////////////////////
-http://localhost:3000/api/
+https://webapidrivervampi.azurewebsites.net/api/
+
+-----------------------------------------------------------------------------------------------------------
+-------------------------------------------DETELLE ALUMNO-------------------------------------------------
+
+GET ALL
+GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno
 
 
-getUserByMatricula(GET): http://localhost:3000/api/getUserByMatricula/70561
+UPDATE CALIFS
+PUT -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno
+{
+    "idmateria": 2,
+    "matricula": "70561"
+}
 
-editUser(PUT): http://localhost:3000/api/editUser
+
+GET DETALLE ALUMNO BY MATRICULA
+GET -> https://webapidrivervampi.azurewebsites.net​/api​/DetalleAlumno​/matricula​/{matricula}
+
+
+GET DETALLE ALUMNO BY ID_MATERIA
+GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno/idMateria/{idMateria}
+
+
+GET DETALLE ALUMNO BY MATRICULA Y ID_MATERIA
+GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleAlumno/{matricula}/{idMateria}
+
+
+-----------------------------------------------------------------------------------------------------------
+-------------------------------------------DETELLE MAESTRO-------------------------------------------------
+
+GET ALL
+GET -> https://webapidrivervampi.azurewebsites.net​/api​/DetalleMaestro
+
+
+GET DETALLE MAESTRO BY MATRICULA
+GET -> https://webapidrivervampi.azurewebsites.net/api/DetalleMaestro/{matricula}
+
+
+-----------------------------------------------------------------------------------------------------------
+------------------------------------------------MATERIA-----------------------------------------------------
+
+GET ALL
+GET -> https://webapidrivervampi.azurewebsites.net​/api/Materia
+
+
+GET MATERIA BY ID_MATERIA
+GET -> https://webapidrivervampi.azurewebsites.net/api/Materia/{idMateria}
+
+
+-----------------------------------------------------------------------------------------------------------
+------------------------------------------------USUARIO-----------------------------------------------------
+
+GET ALL
+GET -> https://webapidrivervampi.azurewebsites.net​/api/Usuario
+
+
+UPDATE USUARIO
+PUT -> https://webapidrivervampi.azurewebsites.net/api/Usuario
 {
     "matricula": "70561",
     "foto": "",
@@ -81,27 +135,9 @@ editUser(PUT): http://localhost:3000/api/editUser
     "correo": "pols@prodigy.net.mx"
 }
 
-getMateriaByAlumno(GET): http://localhost:3000/api/getMateriaByAlumno/71462
 
-getMateriaByMaestro(GET): http://localhost:3000/api/getMateriaByMaestro/70000
-
-getAlumnosByMateria(GET): http://localhost:3000/api/getAlumnosByMateria/1
-
-getCalif(GET): http://localhost:3000/api/getCalif
-{
-    "idmateria": 2,
-    "matricula": "70561"
-}
-
-editCalif(PUT): http://localhost:3000/api/editCalif
-{
-    "iddetalle_alumno": 1,
-    "calif1": 6,
-    "calif2": 10,
-    "calif3": 9.5
-}
-
-getMateriaById(GET): http://localhost:3000/api/getMateriaById/3
+GET USUARIO BY MATRICULA
+GET -> https://webapidrivervampi.azurewebsites.net​/api/Usuario/{matricula}
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -123,6 +159,7 @@ MAESTRO
 - detalle de alumno ✔ ✔
     - editar calif parcial ✔ ✔
 
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 												fLAn
 
@@ -134,7 +171,7 @@ MAESTRO
  - LÓGICA DE LAS CARPETAS Y ARCHIVOS ✔
  - DISEÑO BASE DE LA APP - XAML ✔
 4 DIC
- - CONEXIÓN CON API
+ - CONEXIÓN CON API ✔
  - INICIO DE LA LÓGICA - FRONT
 5-6 DIC
  - LÓGICA - FRONT (con notifs simples)
