@@ -12,17 +12,16 @@ import com.vampi.vampimaestro.domain.repository.UsuarioRepository
 import com.vampi.vampimaestro.framework.api.ApiRequest
 import javax.inject.Inject
 
-class UsuarioRepositoryImpl /*@Inject constructor(
+class UsuarioRepositoryImpl @Inject constructor(
     private val usuarioApi: UsuarioApi,
-    private val networkHandler: NetworkHandler,
-    private val authManager: AuthManager
+    private val networkHandler: NetworkHandler
 ) : UsuarioRepository, ApiRequest {
 
-    override fun getUserByMatricula(matricula: Int): Either<Failure, Usuario> {
+    override fun getUserByMatricula(matricula: Int): Either<Failure, UsuariosResponse> {
         val result = makeRequest(
             networkHandler,
             usuarioApi.getUserByMatricula(matricula),
-            { it.usuarios?.get(0) ?: Usuario() },
+            { it },
             UsuariosResponse(
                 emptyList()
             )
@@ -34,4 +33,4 @@ class UsuarioRepositoryImpl /*@Inject constructor(
 
     }
 
-}*/
+}

@@ -1,6 +1,7 @@
-package com.vampi.vampimaestro.domain.model
+package com.vampi.vampiappm.domain.model
 
 import android.os.Parcelable
+import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 import kotlinx.parcelize.Parcelize
 

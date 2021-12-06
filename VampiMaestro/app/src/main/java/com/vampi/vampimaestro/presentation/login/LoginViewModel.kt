@@ -11,17 +11,17 @@ import javax.inject.Inject
 @DelicateCoroutinesApi
 @HiltViewModel
 class LoginViewModel @Inject constructor(
-    //private val getUsuarioByMatricula: GetUsuarioByMatricula
+    private val getUsuarioByMatricula: GetUsuarioByMatricula
 ): BaseViewModel(){
-/*
+
     fun getUsuarioByMatricula(matricula: Int) {
         getUsuarioByMatricula(matricula) {
-            it.fold(::handleFailure, ::returnUsuario)
+            it.fold(::handleFailure) { response ->
+                state.value = LoginViewState.UsuarioReceived(response.usuarios ?: listOf())
+
+                true
+            }
         }
     }
-
-    private fun returnUsuario(usuario: Usuario) {
-        state.value = LoginViewState.UsuarioReceived(usuario)
-    }*/
 
 }

@@ -29,7 +29,7 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
             observe(state, ::onViewStateChanged)
             failure(failure, ::handleFailure)
 
-            //getUsuarioByMatricula(70561)
+            getUsuarioByMatricula(70561)
         }
     }
 
