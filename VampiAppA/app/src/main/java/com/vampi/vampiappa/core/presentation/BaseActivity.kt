@@ -1,11 +1,16 @@
-package com.vampi.vampialumno.core.presentation
+package com.vampi.vampiappa.core.presentation
 
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentContainerView
-import com.vampi.vampialumno.core.exception.Failure
+import androidx.navigation.NavController
+import com.vampi.vampiappa.core.exception.Failure
+
+/**
+ * Created by Amalip on 9/27/2021.
+ */
 
 abstract class BaseActivity : AppCompatActivity(), OnFailure {
 
@@ -30,7 +35,7 @@ abstract class BaseActivity : AppCompatActivity(), OnFailure {
         }
     }
 
-    //abstract fun setUpNavigation(navController: NavController)
+    abstract fun setUpNavigation(navController: NavController)
 
     override fun handleFailure(failure: Failure?) {
         showProgress(false)
@@ -38,7 +43,7 @@ abstract class BaseActivity : AppCompatActivity(), OnFailure {
 
     abstract fun showProgress(show: Boolean)
 
-    //abstract fun setBottomNavVisibility(visibility: Int)
+    abstract fun setBottomNavVisibility(visibility: Int)
 
     abstract fun setBinding()
 

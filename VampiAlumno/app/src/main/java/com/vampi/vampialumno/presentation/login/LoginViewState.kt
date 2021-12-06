@@ -1,3 +1,10 @@
 package com.vampi.vampialumno.presentation.login
 
-sealed class LoginViewState
+import com.vampi.vampialumno.core.presentation.BaseViewState
+import com.vampi.vampialumno.domain.model.Usuario
+
+sealed class LoginViewState: BaseViewState() {
+
+    data class UsuarioReceived(val usuarios: List<Usuario>) : BaseViewState()
+
+}

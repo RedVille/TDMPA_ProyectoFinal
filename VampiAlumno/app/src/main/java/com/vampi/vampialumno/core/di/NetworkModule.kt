@@ -2,6 +2,7 @@ package com.vampi.vampialumno.core.di
 
 import android.content.Context
 import com.vampi.vampialumno.core.plataform.NetworkHandler
+import com.vampi.vampialumno.framework.api.ApiProvider
 //import com.vampi.vampialumno.framework.api.ApiProvider
 import dagger.Module
 import dagger.Provides
@@ -15,9 +16,9 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
-    //@Provides
-    //@Singleton
-    //fun provideApiProvider() = ApiProvider()
+    @Provides
+    @Singleton
+    fun provideApiProvider() = ApiProvider()
 
     @Provides
     @Singleton
