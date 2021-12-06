@@ -32,7 +32,7 @@ class MainActivity : BaseActivity() {
         get() = binding.mainFragmentContainer
 
     override fun showProgress(show: Boolean) {
-        TODO("Not yet implemented")
+
     }
 
 }

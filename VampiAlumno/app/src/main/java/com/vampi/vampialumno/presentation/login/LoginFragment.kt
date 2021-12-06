@@ -13,7 +13,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
 import kotlinx.coroutines.DelicateCoroutinesApi
 
-
 @AndroidEntryPoint
 @WithFragmentBindings
 @DelicateCoroutinesApi
@@ -28,17 +27,25 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
         loginViewModel.apply {
             observe(state, ::onViewStateChanged)
             failure(failure, ::handleFailure)
-
-            getUsuarioByMatricula(70561)
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
     }
 
     override fun onViewStateChanged(state: BaseViewState?) {
         super.onViewStateChanged(state)
+        when(state) {
+            is LoginViewState.UsuarioReceived -> {
+                if(state.usuarios.isNotEmpty()){
+                    if(loginViewModel.validatePassword(state.usuarios[0]) && loginViewModel.validateType(state.usuarios[0])) {
+                        loginViewModel.setLocalUser(state.usuarios[0])
+                        navController.navigate(LoginFragmentDirections.actionLoginFragmentToMenuFragment())
+                    }
+                    else
+                        showToast("Credenciales Incorrectas D:")
+                }
+                else
+                    showToast("Usuario no encontrado :(")
+            }
+        }
     }
 
     override fun setBinding(view: View) {
@@ -46,10 +53,21 @@ class LoginFragment : BaseFragment(R.layout.login_fragment) {
 
         setHasOptionsMenu(true)
 
-        binding.lifecycleOwner = this
-
-        //baseActivity.setBottomNavVisibility(View.VISIBLE)
+        binding.apply {
+            lifecycleOwner = this@LoginFragment
+            vm = loginViewModel
+            btnDoLogin.setOnClickListener {
+                doLogin()
+            }
+        }
     }
 
+    private fun doLogin() {
+        if(loginViewModel.validateEmpties()){
+            if(loginViewModel.validateMatricula()) loginViewModel.getUsuarioByMatricula()
+            else showToast("Matrícula inválida")
+        }
+        else showToast("Campos vacíos")
+    }
 
 }

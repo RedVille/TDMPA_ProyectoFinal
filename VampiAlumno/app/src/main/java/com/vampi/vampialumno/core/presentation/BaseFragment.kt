@@ -61,7 +61,7 @@ abstract class BaseFragment(@LayoutRes layoutId: Int) : Fragment(layoutId), OnFa
             factoryProducer = { defaultViewModelProviderFactory }
         )
 
-    private fun showToast(message: String) = Toast.makeText(
+    fun showToast(message: String) = Toast.makeText(
         context,
         message,
         Toast.LENGTH_SHORT

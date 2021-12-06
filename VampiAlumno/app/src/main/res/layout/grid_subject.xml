@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="item"
+            type="com.vampi.vampialumno.domain.model.Materia" />
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,6 +38,7 @@
                 android:lines="1"
                 android:textAlignment="center"
                 android:textColor="@color/font1"
+                android:text="@{item.nombre}"
                 app:layout_constraintEnd_toEndOf="@id/imgSubject"
                 app:layout_constraintStart_toStartOf="@id/imgSubject"
                 app:layout_constraintTop_toBottomOf="@id/imgSubject"
