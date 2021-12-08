@@ -56,8 +56,8 @@
             android:name="user"
             app:argType="com.vampi.vampimaestro.domain.model.Usuario" />
         <action
-            android:id="@+id/action_editProfileFragment_to_profileDetailFragment"
-            app:destination="@id/profileDetailFragment" />
+            android:id="@+id/action_editProfileFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/subjectDetailFragment"
