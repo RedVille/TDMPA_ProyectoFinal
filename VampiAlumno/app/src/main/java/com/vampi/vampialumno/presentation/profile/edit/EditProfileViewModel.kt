@@ -24,7 +24,6 @@ class EditProfileViewModel @Inject constructor(
     val apPaterno = MutableLiveData("")
     val apMaterno = MutableLiveData("")
     val correo = MutableLiveData("")
-    //val foto =
 
     fun editUser(usuario: Usuario){
         editUser(usuario){
@@ -43,5 +42,9 @@ class EditProfileViewModel @Inject constructor(
 
     private fun setUserInfo(usuario: Usuario) {
         state.value = LoginViewState.LoggedUser(usuario)
+    }
+
+    fun validateEmpties(): Boolean{
+        return !(nombre.value.isNullOrBlank() || apPaterno.value.isNullOrBlank() || apMaterno.value.isNullOrBlank() || correo.value.isNullOrBlank())
     }
 }

@@ -10,6 +10,7 @@ interface UsuarioApi {
     @GET("Usuario/{matricula}")
     fun getUserByMatricula(@Path("matricula") matricula: Int): Call<UsuariosResponse>
 
+    @Headers("Content-Type: application/json")
     @PUT("Usuario")
     fun editUser(@Body usuario: Usuario): Call<Int>
 

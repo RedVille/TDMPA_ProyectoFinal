@@ -1,0 +1,18 @@
+com/vampi/vampiappa/BR.java
+ com.vampi.vampiappa.BR
+com/vampi/vampiappa/DataBindingTriggerClass.java
+ com.vampi.vampiappa.DataBindingTriggerClass
+androidx/databinding/DataBinderMapperImpl.java
+ androidx.databinding.DataBinderMapperImpl
+com/vampi/vampiappa/core/plataform/NetworkHandler_Factory.java
+ com.vampi.vampiappa.core.plataform.NetworkHandler_Factory
+com/vampi/vampiappa/BuildConfig.java
+ com.vampi.vampiappa.BuildConfig
+com/vampi/vampiappa/DataBinderMapperImpl.java
+ com.vampi.vampiappa.DataBinderMapperImpl
+ com.vampi.vampiappa.DataBinderMapperImpl$InnerBrLookup
+ com.vampi.vampiappa.DataBinderMapperImpl$InnerLayoutIdLookup
+androidx/databinding/library/baseAdapters/BR.java
+ androidx.databinding.library.baseAdapters.BR
+androidx/databinding/DataBindingComponent.java
+ androidx.databinding.DataBindingComponent
