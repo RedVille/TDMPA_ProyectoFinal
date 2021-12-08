@@ -50,7 +50,12 @@ class MenuFragment : BaseFragment(R.layout.fragment_menu) {
         binding = FragmentMenuBinding.bind(view)
         binding.apply {
             lifecycleOwner = this@MenuFragment
+
             btnLogout.setOnClickListener { menuViewModel.doLogout() }
+
+            btnSubjects.setOnClickListener { navController.navigate((MenuFragmentDirections.actionMenuFragmentToSubjectsFragment())) }
+
+            btnProfile.setOnClickListener { navController.navigate((MenuFragmentDirections.actionMenuFragmentToProfileDetailFragment())) }
         }
     }
 

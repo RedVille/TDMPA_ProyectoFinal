@@ -2,7 +2,6 @@ package com.vampi.vampimaestro.domain.usecase
 
 import com.vampi.vampimaestro.core.interactor.UseCase
 import com.vampi.vampimaestro.data.dto.UsuariosResponse
-import com.vampi.vampimaestro.domain.model.Usuario
 import com.vampi.vampimaestro.domain.repository.UsuarioRepository
 import javax.inject.Inject
 

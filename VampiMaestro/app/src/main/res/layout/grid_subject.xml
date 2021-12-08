@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="item"
+            type="com.vampi.vampimaestro.domain.model.DetalleMaestro" />
+    </data>
+
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +37,7 @@
                 android:fontFamily="@font/opensanslight"
                 android:lines="1"
                 android:textAlignment="center"
+                android:text="@{item.nombre}"
                 android:textColor="@color/font1"
                 app:layout_constraintEnd_toEndOf="@id/imgSubject"
                 app:layout_constraintStart_toStartOf="@id/imgSubject"

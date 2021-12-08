@@ -20,10 +20,6 @@ class MainActivity : BaseActivity() {
 
     override fun setBinding() {
         binding = DataBindingUtil.setContentView(this, layoutId())
-
-        binding.apply {
-            lifecycleOwner = this@MainActivity
-        }
     }
 
     override fun layoutId() = R.layout.activity_main

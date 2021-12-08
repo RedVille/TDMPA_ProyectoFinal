@@ -1,32 +1,84 @@
 package com.vampi.vampimaestro.presentation.subject.list
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.vampi.vampimaestro.R
+import com.vampi.vampimaestro.core.extension.failure
+import com.vampi.vampimaestro.core.extension.observe
+import com.vampi.vampimaestro.core.presentation.BaseFragment
+import com.vampi.vampimaestro.core.presentation.BaseViewState
+import com.vampi.vampimaestro.core.utils.LayoutType
+import com.vampi.vampimaestro.databinding.SubjectsFragmentBinding
+import com.vampi.vampimaestro.domain.model.DetalleMaestro
+import com.vampi.vampimaestro.presentation.login.LoginViewState
+import dagger.hilt.android.AndroidEntryPoint
+import dagger.hilt.android.WithFragmentBindings
+import kotlinx.coroutines.DelicateCoroutinesApi
 
-class SubjectsFragment : Fragment() {
+@AndroidEntryPoint
+@WithFragmentBindings
+@DelicateCoroutinesApi
+class SubjectsFragment : BaseFragment(R.layout.subjects_fragment) {
 
-    companion object {
-        fun newInstance() = SubjectsFragment()
+    private lateinit var binding: SubjectsFragmentBinding
+    private val adapter: SubjectAdapter by lazy { SubjectAdapter() }
+    private val subjectsViewModel by viewModels<SubjectsViewModel>()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        subjectsViewModel.apply {
+            observe(state, ::onViewStateChanged)
+            failure(failure, ::handleFailure)
+        }
     }
 
-    private lateinit var viewModel: SubjectsViewModel
+    override fun onViewStateChanged(state: BaseViewState?) {
+        super.onViewStateChanged(state)
+        when (state) {
+            is LoginViewState.LoggedUser -> subjectsViewModel.getDetalleMaestroByMatricula(state.usuario.matricula)
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.subjects_fragment, container, false)
+            is SubjectsViewState.DetalleMaestroReceived -> setUpAdapter(state.detalleMaestros)
+        }
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(SubjectsViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onResume() {
+        super.onResume()
+
+        subjectsViewModel.getLocalUser()
     }
+
+    private fun setUpAdapter(detalleMaestros: List<DetalleMaestro>) {
+        adapter.addData(detalleMaestros)
+
+        adapter.setListener {
+            navController.navigate(
+                SubjectsFragmentDirections.actionSubjectsFragmentToSubjectDetailFragment())
+        }
+
+        binding.rcSubjects.apply {
+            adapter = this@SubjectsFragment.adapter
+        }
+    }
+
+    override fun setBinding(view: View) {
+        binding = SubjectsFragmentBinding.bind(view)
+
+        binding.lifecycleOwner = this
+
+        binding.apply {
+            swpRefresh.apply {
+                setOnRefreshListener {
+                    isRefreshing = false
+                }
+            }
+        }
+
+        binding.rcSubjects.layoutManager = GridLayoutManager(requireContext(), 2)
+        LayoutType.GRID
+
+    }
+
 
 }

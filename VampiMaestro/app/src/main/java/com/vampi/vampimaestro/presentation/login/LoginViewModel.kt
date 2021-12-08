@@ -18,9 +18,7 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(
     private val getUsuarioByMatricula: GetUsuarioByMatricula,
-    private val setLocalUser: SetLocalUser,
-    private val getLocalUser: GetLocalUser,
-    private val doLogout: DoLogout
+    private val setLocalUser: SetLocalUser
 ): BaseViewModel(){
 
     val matricula = MutableLiveData("")

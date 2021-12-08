@@ -10,7 +10,7 @@ interface UsuarioApi {
     @GET("Usuario/{matricula}")
     fun getUserByMatricula(@Path("matricula") matricula: Int): Call<UsuariosResponse>
 
-    //@PUT("editUser")
-    //fun editUser(@Body matricula: Int, ): Call<UsuariosResponse>
+    @PUT("Usuario/")
+    fun editUser(@Body usuario: Usuario): Call<Int>
 
 }

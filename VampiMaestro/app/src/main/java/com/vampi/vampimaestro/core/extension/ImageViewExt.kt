@@ -4,6 +4,7 @@ import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import coil.load
 import coil.transform.CircleCropTransformation
+import coil.transform.RoundedCornersTransformation
 import com.vampi.vampimaestro.R
 
 
@@ -15,6 +16,13 @@ fun ImageView.loadFromURLCircular(url: String?) = url?.let {
         error(R.drawable.ic_vampi_logo)
         transformations(CircleCropTransformation())
     }
+}
+
+@BindingAdapter("loadFromURLRounded")
+fun ImageView.loadFromURLRounded(url: String) = this.load(url){
+    crossfade(true)
+    placeholder(R.drawable.ic_vampi_logo)
+    transformations(RoundedCornersTransformation(30F))
 }
 
 @BindingAdapter("loadFromURL")

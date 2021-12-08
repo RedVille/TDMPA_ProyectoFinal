@@ -52,6 +52,18 @@ class UsuarioRepositoryImpl @Inject constructor(
 
     }
 
+    override fun editUser(usuario: Usuario): Either<Failure, Int> {
+        val result = makeRequest(
+            networkHandler,
+            usuarioApi.editUser(usuario),
+            { it },
+            0
+        )
+
+        return if (result.isLeft) {
+            Either.Left(result.leftOrElse(Failure.NetworkConnection))
+        } else result
+    }
 
 
 }

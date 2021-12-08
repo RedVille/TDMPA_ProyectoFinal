@@ -4,4 +4,4 @@ import com.squareup.moshi.JsonClass
 import com.vampi.vampimaestro.domain.model.DetalleMaestro
 
 @JsonClass(generateAdapter = true)
-data class DetalleMaestroResponse(val detalleMaestro: List<DetalleMaestro>? = listOf())
+data class DetalleMaestroResponse(val detalleMaestros: List<DetalleMaestro>? = listOf())
