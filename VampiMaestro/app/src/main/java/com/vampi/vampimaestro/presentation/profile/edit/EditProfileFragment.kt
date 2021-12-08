@@ -53,7 +53,7 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
         binding.apply {
             lifecycleOwner = this@EditProfileFragment
 
-            i
+            
 
         }
     }

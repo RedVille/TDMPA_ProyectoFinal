@@ -1,0 +1,9 @@
+Maestros
+
+Matricula: 70001
+Contraseña: b123
+
+Alumnos
+
+Matricula: 71462
+Contraseña: 123
