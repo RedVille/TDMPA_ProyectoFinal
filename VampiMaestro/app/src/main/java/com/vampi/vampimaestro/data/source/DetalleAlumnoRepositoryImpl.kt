@@ -15,10 +15,10 @@ class DetalleAlumnoRepositoryImpl @Inject constructor(
     private val networkHandler: NetworkHandler
 ) : DetalleAlumnoRepository, ApiRequest{
 
-    override fun getDetalleAlumnoByMatricula(matricula: Int): Either<Failure, DetalleAlumnoResponse> {
+    override fun getDetalleAlumnoByIdMateria(idMateria: Int): Either<Failure, DetalleAlumnoResponse> {
         val result = makeRequest(
             networkHandler,
-            detalleAlumnoApi.getDetalleAlumnoByMatricula(matricula),
+            detalleAlumnoApi.getDetalleAlumnoByIdMateria(idMateria),
             { it },
             DetalleAlumnoResponse(
                 emptyList()

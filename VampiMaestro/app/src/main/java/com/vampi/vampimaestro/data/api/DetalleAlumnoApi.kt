@@ -8,7 +8,7 @@ import retrofit2.http.Path
 
 interface DetalleAlumnoApi {
 
-    @GET("DetalleAlumno/matricula/{matricula}")
-    fun getDetalleAlumnoByMatricula(@Path("matricula") matricula: Int): Call<DetalleAlumnoResponse>
+    @GET("DetalleAlumno/idMateria/{idMateria}")
+    fun getDetalleAlumnoByIdMateria(@Path("idMateria") idMateria: Int): Call<DetalleAlumnoResponse>
 
 }

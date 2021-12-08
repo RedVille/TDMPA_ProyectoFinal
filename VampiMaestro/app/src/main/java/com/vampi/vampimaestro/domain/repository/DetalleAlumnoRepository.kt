@@ -6,6 +6,6 @@ import com.vampi.vampimaestro.data.dto.DetalleAlumnoResponse
 
 interface DetalleAlumnoRepository {
 
-    fun getDetalleAlumnoByMatricula(matricula: Int): Either<Failure, DetalleAlumnoResponse>
+    fun getDetalleAlumnoByIdMateria(idMateria: Int): Either<Failure, DetalleAlumnoResponse>
 
 }

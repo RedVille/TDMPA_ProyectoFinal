@@ -5,9 +5,9 @@ import com.vampi.vampimaestro.data.dto.DetalleAlumnoResponse
 import com.vampi.vampimaestro.domain.repository.DetalleAlumnoRepository
 import javax.inject.Inject
 
-class GetDetalleAlumnoByMatricula @Inject constructor(private val detalleAlumnoRepository: DetalleAlumnoRepository) :
+class GetDetalleAlumnoByIdMateria @Inject constructor(private val detalleAlumnoRepository: DetalleAlumnoRepository) :
     UseCase<DetalleAlumnoResponse, Int>() {
 
-    override suspend fun run(params: Int) = detalleAlumnoRepository.getDetalleAlumnoByMatricula(params)
+    override suspend fun run(params: Int) = detalleAlumnoRepository.getDetalleAlumnoByIdMateria(params)
 
 }

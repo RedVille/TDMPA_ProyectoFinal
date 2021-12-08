@@ -17,23 +17,8 @@ import javax.inject.Inject
 class SubjectsViewModel @Inject constructor(
     private val getUsuarioByMatricula: GetUsuarioByMatricula,
     private val getLocalUser: GetLocalUser,
-    private val getMateriaById: GetMateriaById,
     private val getDetalleMaestroByMatricula: GetDetalleMaestroByMatricula
 ) : BaseViewModel() {
-
-    fun getMateriaById(id: Int) {
-        getMateriaById(id) {
-            it.fold(::handleFailure) { response ->
-                state.value = SubjectsViewState.MateriasReceived(response.materias ?: listOf())
-
-                true
-            }
-        }
-    }
-
-    fun getMateriasList(materias: List<Materia>) {
-        state.value = SubjectsViewState.MateriasReceived(materias)
-    }
 
     fun getDetalleMaestroByMatricula(matricula: Int) {
         getDetalleMaestroByMatricula(matricula) {

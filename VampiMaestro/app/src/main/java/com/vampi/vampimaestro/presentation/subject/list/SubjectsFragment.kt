@@ -13,6 +13,7 @@ import com.vampi.vampimaestro.core.utils.LayoutType
 import com.vampi.vampimaestro.databinding.SubjectsFragmentBinding
 import com.vampi.vampimaestro.domain.model.DetalleMaestro
 import com.vampi.vampimaestro.presentation.login.LoginViewState
+import com.vampi.vampimaestro.presentation.subject.list.SubjectAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
 import kotlinx.coroutines.DelicateCoroutinesApi

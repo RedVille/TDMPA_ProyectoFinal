@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.vampi.vampimaestro.R
 import com.vampi.vampimaestro.core.extension.failure
 import com.vampi.vampimaestro.core.extension.loadFromURLRounded
@@ -15,6 +16,7 @@ import com.vampi.vampimaestro.domain.model.DetalleAlumno
 import com.vampi.vampimaestro.domain.model.DetalleMaestro
 import com.vampi.vampimaestro.presentation.subject.list.SubjectsFragment
 import com.vampi.vampimaestro.presentation.subject.list.SubjectsFragment.Companion.subjectPicture
+import com.vampi.vampimaestro.presentation.subject.list.SubjectsViewState
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.WithFragmentBindings
 import kotlinx.coroutines.DelicateCoroutinesApi
@@ -26,6 +28,7 @@ class SubjectDetailFragment : BaseFragment(R.layout.subject_detail_fragment) {
 
     private lateinit var binding: SubjectDetailFragmentBinding
     private val args: SubjectDetailFragmentArgs by navArgs()
+    private val adapter: StudentAdapter by lazy { StudentAdapter() }
     private val subjectDetailViewModel by viewModels<SubjectDetailViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,18 +42,26 @@ class SubjectDetailFragment : BaseFragment(R.layout.subject_detail_fragment) {
     override fun onViewStateChanged(state: BaseViewState?) {
         super.onViewStateChanged(state)
         when (state) {
-
+            is SubjectsViewState.DetalleAlumnoReceived -> setUpAdapter(state.detalleAlumnos)
         }
     }
 
     override fun onResume() {
         super.onResume()
 
-        //subjectsViewModel.getLocalUser()
+        subjectDetailViewModel.getDetalleAlumnoByIdMateria(args.subject.idMateria)
     }
 
-    private fun setUpAdapter(detalleAlumno: List<DetalleAlumno>) {
+    private fun setUpAdapter(detalleAlumnos: List<DetalleAlumno>) {
+        adapter.addData(detalleAlumnos)
 
+        adapter.setListener {
+            navController.navigate(SubjectDetailFragmentDirections.actionSubjectDetailFragmentToStudentDetailFragment(it))
+        }
+
+        binding.rvStudents.apply {
+            adapter = this@SubjectDetailFragment.adapter
+        }
     }
 
     override fun setBinding(view: View) {
@@ -65,6 +76,8 @@ class SubjectDetailFragment : BaseFragment(R.layout.subject_detail_fragment) {
                 }
             }
         }
+
+        binding.rvStudents.layoutManager = LinearLayoutManager(requireContext())
 
         printSubject(args.subject)
     }
