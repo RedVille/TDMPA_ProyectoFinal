@@ -64,6 +64,9 @@
         android:name="com.vampi.vampimaestro.presentation.subject.subjectdetail.SubjectDetailFragment"
         android:label="subject_detail_fragment"
         tools:layout="@layout/subject_detail_fragment">
+        <argument
+            android:name="subject"
+            app:argType="com.vampi.vampimaestro.domain.model.DetalleMaestro" />
         <action
             android:id="@+id/action_subjectDetailFragment_to_studentDetailFragment"
             app:destination="@id/studentDetailFragment" />

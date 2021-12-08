@@ -13,7 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="40dp"
-            android:background="@color/secondary">
+            android:background="@color/secondary"
+            tools:context=".presentation.subject.detail.SubjectDetailFragment">
 
             <TextView
                 android:id="@+id/txvDetailSubjectTitle"
