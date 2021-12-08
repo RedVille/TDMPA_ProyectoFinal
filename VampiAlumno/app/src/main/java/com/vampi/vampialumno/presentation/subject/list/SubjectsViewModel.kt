@@ -36,7 +36,7 @@ class SubjectsViewModel @Inject constructor(
     fun getDetalleAlumnoByMatricula(matricula: Int) {
         getDetalleAlumnoByMatricula(matricula) {
             it.fold(::handleFailure) { response ->
-                state.value = SubjectsViewState.DetalleAlumnoReceived(response.detalleAlumno ?: listOf())
+                state.value = SubjectsViewState.DetalleAlumnoReceived(response.detalleAlumnos ?: listOf())
 
                 true
             }

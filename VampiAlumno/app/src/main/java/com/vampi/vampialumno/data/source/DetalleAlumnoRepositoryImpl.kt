@@ -29,21 +29,4 @@ class DetalleAlumnoRepositoryImpl @Inject constructor(
             Either.Left(result.leftOrElse(Failure.NetworkConnection))
         } else result
     }
-
-    override fun getDetalleAlumnoByMatriculaAndId(
-        matricula: Int,
-        idMateria: Int
-    ): Either<Failure, DetalleAlumnoResponse> {
-        val result = makeRequest(
-            networkHandler,
-            detalleAlumnoApi.getDetalleAlumnoByMatriculaAndId(matricula, idMateria),
-            { it },
-            DetalleAlumnoResponse(
-                emptyList()
-            )
-        )
-        return if (result.isLeft) {
-            Either.Left(result.leftOrElse(Failure.NetworkConnection))
-        } else result
-    }
 }

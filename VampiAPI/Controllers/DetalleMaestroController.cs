@@ -13,13 +13,6 @@ namespace VampiAPI.Controllers
     public class DetalleMaestroController : Controller
     {
         // GET: api/<DriverController>
-        [HttpGet]
-        public DetalleMaestrosResponse Get()
-        {
-            return new DetalleMaestroModel().GetAll();
-        }
-
-        // GET: api/<DriverController>
         [HttpGet("{matricula}")]
         public DetalleMaestrosResponse GetMateriaByMaestro(int matricula)
         {

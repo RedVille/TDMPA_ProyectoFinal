@@ -6,7 +6,7 @@
     <data>
         <variable
             name="item"
-            type="com.vampi.vampialumno.domain.model.Materia" />
+            type="com.vampi.vampialumno.domain.model.DetalleAlumno" />
     </data>
 
     <androidx.cardview.widget.CardView

@@ -13,8 +13,6 @@ namespace VampiAPI.Models
 
         public int idDetalleAlumno { get; set; }
 
-        public int idMateria { get; set; }
-
         public int matricula { get; set; }
 
         public float calif1 { get; set; }
@@ -22,6 +20,14 @@ namespace VampiAPI.Models
         public float calif2 { get; set; }
 
         public float calif3 { get; set; }
+
+        public string nombre { get; set; }
+
+        public string descripcion { get; set; }
+
+        public string foto { get; set; }
+
+        public string horario { get; set; }
 
         // GET ALL
         public DetalleAlumnosResponse GetAll()
@@ -42,7 +48,6 @@ namespace VampiAPI.Models
                                 list.Add(new DetalleAlumnoModel
                                 {
                                     idDetalleAlumno = int.Parse(reader["idDetalleAlumno"].ToString()),
-                                    idMateria = int.Parse(reader["idMateria"].ToString()),
                                     matricula = int.Parse(reader["matricula"].ToString()),
                                     calif1 = float.Parse(reader["calif1"].ToString()),
                                     calif2 = float.Parse(reader["calif2"].ToString()),
@@ -75,7 +80,7 @@ namespace VampiAPI.Models
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    string tsql = "SELECT * FROM DetalleAlumno WHERE matricula = @matricula";
+                    string tsql = "SELECT idDetalleAlumno, matricula, calif1, calif2, calif3, nombre, descripcion, foto, horario FROM DetalleAlumno JOIN Materia ON DetalleAlumno.idMateria = Materia.idMateria WHERE DetalleAlumno.matricula = @matricula;";
                     using (SqlCommand cmd = new SqlCommand(tsql, conn))
                     {
                         cmd.Parameters.AddWithValue("@matricula", matricula);
@@ -86,11 +91,14 @@ namespace VampiAPI.Models
                                 list.Add(new DetalleAlumnoModel
                                 {
                                     idDetalleAlumno = int.Parse(reader["idDetalleAlumno"].ToString()),
-                                    idMateria = int.Parse(reader["idMateria"].ToString()),
                                     matricula = int.Parse(reader["matricula"].ToString()),
                                     calif1 = float.Parse(reader["calif1"].ToString()),
                                     calif2 = float.Parse(reader["calif2"].ToString()),
-                                    calif3 = float.Parse(reader["calif3"].ToString())
+                                    calif3 = float.Parse(reader["calif3"].ToString()),
+                                    nombre = reader["nombre"].ToString(),
+                                    descripcion = reader["descripcion"].ToString(),
+                                    foto = reader["foto"].ToString(),
+                                    horario = reader["horario"].ToString()
                                 });
                             }
                         }
@@ -119,7 +127,7 @@ namespace VampiAPI.Models
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    string tsql = "SELECT * FROM DetalleAlumno WHERE idMateria = @idMateria";
+                    string tsql = "SELECT idDetalleAlumno, matricula, calif1, calif2, calif3, nombre, descripcion, foto, horario FROM DetalleAlumno JOIN Materia ON DetalleAlumno.idMateria = Materia.idMateria WHERE DetalleAlumno.idMateria = @idMateria;";
                     using (SqlCommand cmd = new SqlCommand(tsql, conn))
                     {
                         cmd.Parameters.AddWithValue("@idMateria", idMateria);
@@ -130,11 +138,14 @@ namespace VampiAPI.Models
                                 list.Add(new DetalleAlumnoModel
                                 {
                                     idDetalleAlumno = int.Parse(reader["idDetalleAlumno"].ToString()),
-                                    idMateria = int.Parse(reader["idMateria"].ToString()),
                                     matricula = int.Parse(reader["matricula"].ToString()),
                                     calif1 = float.Parse(reader["calif1"].ToString()),
                                     calif2 = float.Parse(reader["calif2"].ToString()),
-                                    calif3 = float.Parse(reader["calif3"].ToString())
+                                    calif3 = float.Parse(reader["calif3"].ToString()),
+                                    nombre = reader["nombre"].ToString(),
+                                    descripcion = reader["descripcion"].ToString(),
+                                    foto = reader["foto"].ToString(),
+                                    horario = reader["horario"].ToString()
                                 });
                             }
                         }
@@ -154,7 +165,7 @@ namespace VampiAPI.Models
             }
         }
 
-        // GET BY MATRICULA
+        /* GET BY MATRICULA
         public DetalleAlumnosResponse GetCalif(int matricula, int idMateria)
         {
             List<DetalleAlumnoModel> list = new List<DetalleAlumnoModel>();
@@ -163,7 +174,7 @@ namespace VampiAPI.Models
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    string tsql = "SELECT * FROM DetalleAlumno WHERE matricula = @matricula AND idMateria = @idMateria";
+                    string tsql = "SELECT idDetalleAlumno, matricula, calif1, calif2, calif3, nombre, descripcion, foto, horario FROM DetalleAlumno JOIN Materia ON DetalleAlumno.idMateria = Materia.idMateria WHERE matricula = @matricula AND idMateria = @idMateria";
                     using (SqlCommand cmd = new SqlCommand(tsql, conn))
                     {
                         cmd.Parameters.AddWithValue("@matricula", matricula);
@@ -175,11 +186,14 @@ namespace VampiAPI.Models
                                 list.Add(new DetalleAlumnoModel
                                 {
                                     idDetalleAlumno = int.Parse(reader["idDetalleAlumno"].ToString()),
-                                    idMateria = int.Parse(reader["idMateria"].ToString()),
                                     matricula = int.Parse(reader["matricula"].ToString()),
                                     calif1 = float.Parse(reader["calif1"].ToString()),
                                     calif2 = float.Parse(reader["calif2"].ToString()),
-                                    calif3 = float.Parse(reader["calif3"].ToString())
+                                    calif3 = float.Parse(reader["calif3"].ToString()),
+                                    nombre = reader["nombre"].ToString(),
+                                    descripcion = reader["descripcion"].ToString(),
+                                    foto = reader["foto"].ToString(),
+                                    horario = reader["horario"].ToString()
                                 });
                             }
                         }
@@ -197,12 +211,11 @@ namespace VampiAPI.Models
                     detalleAlumnos = null
                 };
             }
-        }
+        }*/
 
         // EDIT USER
         public int EditCalif()
         {
-            List<DetalleAlumnoModel> list = new List<DetalleAlumnoModel>();
             try
             {
                 using (SqlConnection conn = new SqlConnection(ConnectionString))

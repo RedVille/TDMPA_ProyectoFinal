@@ -11,7 +11,4 @@ interface DetalleAlumnoApi {
     @GET("DetalleAlumno/matricula/{matricula}")
     fun getDetalleAlumnoByMatricula(@Path("matricula") matricula: Int): Call<DetalleAlumnoResponse>
 
-    @GET("DetalleAlumno/{matricula}/{idMateria}")
-    fun getDetalleAlumnoByMatriculaAndId(@Path("matricula") matricula: Int, @Path("idMateria") idMateria: Int): Call<DetalleAlumnoResponse>
-
 }

@@ -11,25 +11,24 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity: BaseActivity() {
     private lateinit var binding: ActivityMainBinding
 
+    override fun layoutId() = R.layout.activity_main
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setBinding()
     }
 
-    override fun setBinding() {
-        binding = DataBindingUtil.setContentView(this, layoutId())
-
-        binding.apply {
-            lifecycleOwner = this@MainActivity
-        }
-    }
-
-    override fun layoutId() = R.layout.activity_main
-
     override val fragmentContainer: FragmentContainerView
         get() = binding.mainFragmentContainer
 
+    override fun setBinding() {
+        binding = DataBindingUtil.setContentView(this, layoutId())
+
+        /*binding.apply {
+            lifecycleOwner = this@MainActivity
+        }*/
+    }
 
     override fun showProgress(show: Boolean) {
     }

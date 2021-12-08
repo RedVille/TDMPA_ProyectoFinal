@@ -7,11 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.vampi.vampialumno.R
 import com.vampi.vampialumno.core.extension.failure
 import com.vampi.vampialumno.core.extension.observe
 import com.vampi.vampialumno.core.presentation.BaseFragment
 import com.vampi.vampialumno.core.presentation.BaseViewState
+import com.vampi.vampialumno.core.utils.LayoutType
 import com.vampi.vampialumno.databinding.SubjectsFragmentBinding
 import com.vampi.vampialumno.domain.model.DetalleAlumno
 import com.vampi.vampialumno.domain.model.Materia
@@ -30,40 +32,36 @@ class SubjectsFragment : BaseFragment(R.layout.subjects_fragment) {
 
     private val subjectsViewModel by viewModels<SubjectsViewModel>()
 
-    private var materias: MutableList<Materia> = mutableListOf()
+    private var materias: MutableList<DetalleAlumno> = mutableListOf()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         subjectsViewModel.apply {
             observe(state, ::onViewStateChanged)
             failure(failure, ::handleFailure)
-
-            getLocalUser()
         }
     }
 
     override fun onViewStateChanged(state: BaseViewState?) {
         super.onViewStateChanged(state)
         when(state){
-            is LoginViewState.UsuarioReceived -> {
-                subjectsViewModel.getDetalleAlumnoByMatricula(state.usuarios[0].matricula)
+            is LoginViewState.LoggedUser -> {
+                subjectsViewModel.getDetalleAlumnoByMatricula(state.usuario.matricula)
             }
-            is SubjectsViewState.DetalleAlumnoReceived -> {
-                state.detalleAlumno.forEach { detalle ->
-                    subjectsViewModel.getMateriaById(detalle.idMateria)
-                }
-            }
-            is SubjectsViewState.MateriasReceived ->  {
-                materias.add(state.materias[0])
-                setUpAdapter(materias)
-            }
+            is SubjectsViewState.DetalleAlumnoReceived -> setUpAdapter(state.detalleAlumnos)
         }
     }
 
-    private fun setUpAdapter(materias: List<Materia>){
-        adapter.addData(materias)
+    override fun onResume() {
+        super.onResume()
 
-        adapter.listener = {
+        subjectsViewModel.getLocalUser()
+    }
+
+    private fun setUpAdapter(detalleAlumnos: List<DetalleAlumno>){
+        adapter.addData(detalleAlumnos)
+
+        adapter.setListener {
             navController.navigate(SubjectsFragmentDirections.actionSubjectsFragmentToSubjectDetailFragment())
         }
 
@@ -75,12 +73,20 @@ class SubjectsFragment : BaseFragment(R.layout.subjects_fragment) {
     override fun setBinding(view: View) {
         binding = SubjectsFragmentBinding.bind(view)
 
-        setHasOptionsMenu(true)
+        binding.lifecycleOwner = this
 
         binding.apply {
-            lifecycleOwner = this@SubjectsFragment
+            swpRefresh.apply {
+                setOnRefreshListener {
+                    isRefreshing = false
+                }
+            }
         }
-    }
 
+        binding.rcSubjects.layoutManager = GridLayoutManager(requireContext(),2)
+        LayoutType.GRID
+
+
+    }
 
 }

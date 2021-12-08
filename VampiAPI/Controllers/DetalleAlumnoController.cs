@@ -33,12 +33,12 @@ namespace VampiAPI.Controllers
             return new DetalleAlumnoModel().GetAlumnoByMateria(idMateria);
         }
 
-        // GET: api/<DriverController>
+        /* GET: api/<DriverController>
         [HttpGet("{matricula}/{idMateria}")]
         public DetalleAlumnosResponse GetCalif(int matricula, int idMateria)
         {
             return new DetalleAlumnoModel().GetCalif(matricula, idMateria);
-        }
+        }*/
 
         // PUT <PetsController>/5
         [HttpPut]

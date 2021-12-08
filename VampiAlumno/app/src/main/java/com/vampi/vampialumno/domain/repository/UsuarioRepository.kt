@@ -9,6 +9,8 @@ interface UsuarioRepository {
 
     fun getUserByMatricula(matricula: Int): Either<Failure, UsuariosResponse>
 
+    fun editUser(usuario: Usuario): Either<Failure, Int>
+
     fun getLocalUser(): Either<Failure, Usuario>
 
     fun doLogout(): Either<Failure, Boolean>

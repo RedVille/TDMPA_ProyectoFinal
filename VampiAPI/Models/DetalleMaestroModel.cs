@@ -17,45 +17,15 @@ namespace VampiAPI.Models
 
         public int matricula { get; set; }
 
-        // GET ALL
-        public DetalleMaestrosResponse GetAll()
-        {
-            List<DetalleMaestroModel> list = new List<DetalleMaestroModel>();
-            try
-            {
-                using (SqlConnection conn = new SqlConnection(ConnectionString))
-                {
-                    conn.Open();
-                    string tsql = "SELECT * FROM DetalleMaestro";
-                    using (SqlCommand cmd = new SqlCommand(tsql, conn))
-                    {
-                        using (SqlDataReader reader = cmd.ExecuteReader())
-                        {
-                            while (reader.Read())
-                            {
-                                list.Add(new DetalleMaestroModel
-                                {
-                                    idDetalleMaestro = int.Parse(reader["idDetalleMaestro"].ToString()),
-                                    idMateria = int.Parse(reader["idMateria"].ToString()),
-                                    matricula = int.Parse(reader["matricula"].ToString())
-                                });
-                            }
-                        }
-                    }
-                }
-                return new DetalleMaestrosResponse
-                {
-                    detalleMaestros = list
-                };
-            }
-            catch (Exception ex)
-            {
-                return new DetalleMaestrosResponse
-                {
-                    detalleMaestros = null
-                };
-            }
-        }
+        public string nombre { get; set; }
+
+        public string descripcion { get; set; }
+
+        public string foto { get; set; }
+
+        public string horario { get; set; }
+
+       
 
         // GET BY MATRICULA
         public DetalleMaestrosResponse GetMateriaByMaestro(int matricula)
@@ -66,7 +36,7 @@ namespace VampiAPI.Models
                 using (SqlConnection conn = new SqlConnection(ConnectionString))
                 {
                     conn.Open();
-                    string tsql = "SELECT * FROM DetalleMaestro WHERE matricula = @matricula";
+                    string tsql = "SELECT idDetalleMaestro, DetalleMaestro.idMateria, matricula, nombre, descripcion, foto, horario FROM DetalleMaestro JOIN Materia ON DetalleMaestro.idMateria = Materia.idMateria WHERE matricula = @matricula";
                     using (SqlCommand cmd = new SqlCommand(tsql, conn))
                     {
                         cmd.Parameters.AddWithValue("@matricula", matricula);
@@ -78,7 +48,11 @@ namespace VampiAPI.Models
                                 {
                                     idDetalleMaestro = int.Parse(reader["idDetalleMaestro"].ToString()),
                                     idMateria = int.Parse(reader["idMateria"].ToString()),
-                                    matricula = int.Parse(reader["matricula"].ToString())
+                                    matricula = int.Parse(reader["matricula"].ToString()),
+                                    nombre = reader["nombre"].ToString(),
+                                    descripcion = reader["descripcion"].ToString(),
+                                    foto = reader["foto"].ToString(),
+                                    horario = reader["horario"].ToString()
                                 });
                             }
                         }
