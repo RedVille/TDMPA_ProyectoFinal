@@ -18,12 +18,6 @@ class EditProfileViewModel @Inject constructor(
     private val setLocalUser: SetLocalUser
 ) : BaseViewModel() {
 
-    val nombre = MutableLiveData("")
-    val apPaterno = MutableLiveData("")
-    val apMaterno = MutableLiveData("")
-    val correo = MutableLiveData("")
-    
-
     fun editUser(usuario: Usuario) {
         editUser(usuario) {
             it.fold(::handleFailure) { true }
