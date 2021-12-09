@@ -74,7 +74,8 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
                         )
                     editProfileViewModel.editUser(user)
                     editProfileViewModel.setLocalUser(user)
-                    navController.navigate(EditProfileFragmentDirections.actionEditProfileFragmentToMenuFragment())
+                    fragmentManager?.popBackStack()
+                    //navController.navigate(EditProfileFragmentDirections.actionEditProfileFragmentToMenuFragment())
                 }
                 else{
                     showToast("Oigame no, lléneme bien los campos >>:(")

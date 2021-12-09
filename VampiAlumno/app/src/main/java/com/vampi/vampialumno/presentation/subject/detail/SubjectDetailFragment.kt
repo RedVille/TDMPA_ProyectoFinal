@@ -63,8 +63,8 @@ class SubjectDetailFragment : BaseFragment(R.layout.subject_detail_fragment) {
             8 -> binding.imgDetailSubject.loadFromURLRounded(subjectPicture[7])
             9 -> binding.imgDetailSubject.loadFromURLRounded(subjectPicture[8])
             10 -> binding.imgDetailSubject.loadFromURLRounded(subjectPicture[9])
-            11 -> binding.imgDetailSubject.loadFromURLRounded(subjectPicture[8])
-            12 -> binding.imgDetailSubject.loadFromURLRounded(subjectPicture[9])
+            11 -> binding.imgDetailSubject.loadFromURLRounded(subjectPicture[10])
+            12 -> binding.imgDetailSubject.loadFromURLRounded(subjectPicture[11])
         }
     }
 }

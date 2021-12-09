@@ -55,9 +55,6 @@
         <argument
             android:name="user"
             app:argType="com.vampi.vampialumno.domain.model.Usuario"/>
-        <action
-            android:id="@+id/action_editProfileFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/subjectDetailFragment"
