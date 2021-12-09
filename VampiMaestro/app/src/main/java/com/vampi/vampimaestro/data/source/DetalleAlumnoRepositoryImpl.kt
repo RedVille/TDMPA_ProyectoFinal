@@ -6,6 +6,7 @@ import com.vampi.vampimaestro.core.functional.leftOrElse
 import com.vampi.vampimaestro.core.plataform.NetworkHandler
 import com.vampi.vampimaestro.data.api.DetalleAlumnoApi
 import com.vampi.vampimaestro.data.dto.DetalleAlumnoResponse
+import com.vampi.vampimaestro.domain.model.DetalleAlumno
 import com.vampi.vampimaestro.domain.repository.DetalleAlumnoRepository
 import com.vampi.vampimaestro.framework.api.ApiRequest
 import javax.inject.Inject
@@ -23,6 +24,19 @@ class DetalleAlumnoRepositoryImpl @Inject constructor(
             DetalleAlumnoResponse(
                 emptyList()
             )
+        )
+
+        return if (result.isLeft) {
+            Either.Left(result.leftOrElse(Failure.NetworkConnection))
+        } else result
+    }
+
+    override fun editCalif(detalleAlumno: DetalleAlumno): Either<Failure, Int> {
+        val result = makeRequest(
+            networkHandler,
+            detalleAlumnoApi.editCalif(detalleAlumno),
+            { it },
+            0
         )
 
         return if (result.isLeft) {
