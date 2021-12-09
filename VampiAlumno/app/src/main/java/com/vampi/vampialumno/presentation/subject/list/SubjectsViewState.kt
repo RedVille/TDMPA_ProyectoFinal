@@ -6,6 +6,5 @@ import com.vampi.vampialumno.domain.model.Materia
 import com.vampi.vampialumno.domain.model.Usuario
 
 sealed class SubjectsViewState: BaseViewState() {
-    data class MateriasReceived(val materias: List<Materia>) : BaseViewState()
     data class DetalleAlumnoReceived(val detalleAlumnos: List<DetalleAlumno>) : BaseViewState()
 }
