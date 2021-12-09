@@ -110,8 +110,8 @@ class StudentDetailFragment : BaseFragment(R.layout.student_detail_fragment) {
                     )
 
                     studentDetailViewModel.editCalif(detalleAlumno)
-                    fragmentManager?.popBackStack()
-                    //navController.navigate(StudentDetailFragmentDirections.actionStudentDetailFragmentToMenuFragment())
+                    //fragmentManager?.popBackStack()
+                    navController.navigate(StudentDetailFragmentDirections.actionStudentDetailFragmentToMenuFragment())
 
                 } else {
                     showToast("Tienen que ser números .-.")

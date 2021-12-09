@@ -19,4 +19,5 @@
     <string name="ap1">Vampi apellido paterno</string>
     <string name="ap2">Vampi apellido materno</string>
     <string name="correo">Vampi correo</string>
+    <string name="materias">Materias</string>
 </resources>

@@ -40,7 +40,7 @@ class SubjectsFragment : BaseFragment(R.layout.subjects_fragment) {
             "https://i.pinimg.com/564x/ab/aa/fa/abaafa043a3de38cf1c31bfc5bee813e.jpg",
             "https://preview.redd.it/2mpkij9et4w41.jpg?auto=webp&s=57208fffba2538ae8c7a3b11806b8bd330d9d7a2",
             "https://i.pinimg.com/564x/55/d4/98/55d49812a5213b846dd3643f74b372a7.jpg",
-            "http://images7.memedroid.com/images/UPLOADED873/5dc5889ef2569.jpeg"
+            "https://images7.memedroid.com/images/UPLOADED873/5dc5889ef2569.jpeg"
         )
     }
 

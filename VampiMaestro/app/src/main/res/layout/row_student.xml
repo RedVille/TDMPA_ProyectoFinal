@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="item"
             type="com.vampi.vampimaestro.domain.model.DetalleAlumno" />
@@ -25,8 +26,10 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/opensanslight"
                 android:lines="1"
+                android:padding="5dp"
                 android:textAlignment="center"
                 android:textColor="@color/font1"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toStartOf="@id/txvP1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -39,8 +42,10 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/opensanslight"
                 android:lines="1"
+                android:padding="5dp"
                 android:textAlignment="center"
                 android:textColor="@color/font1"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toStartOf="@id/txvP2"
                 app:layout_constraintStart_toEndOf="@id/txvName"
                 app:layout_constraintTop_toTopOf="@id/txvName"
@@ -53,8 +58,10 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/opensanslight"
                 android:lines="1"
+                android:padding="5dp"
                 android:textAlignment="center"
                 android:textColor="@color/font1"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toStartOf="@id/txvP3"
                 app:layout_constraintStart_toEndOf="@id/txvP1"
                 app:layout_constraintTop_toTopOf="@id/txvName"
@@ -67,8 +74,10 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/opensanslight"
                 android:lines="1"
+                android:padding="5dp"
                 android:textAlignment="center"
                 android:textColor="@color/font1"
+                android:textSize="17sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/txvP2"
                 app:layout_constraintTop_toTopOf="@id/txvName"

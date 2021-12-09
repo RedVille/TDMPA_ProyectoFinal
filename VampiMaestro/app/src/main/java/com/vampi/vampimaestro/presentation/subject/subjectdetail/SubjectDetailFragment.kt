@@ -56,7 +56,11 @@ class SubjectDetailFragment : BaseFragment(R.layout.subject_detail_fragment) {
         adapter.addData(detalleAlumnos)
 
         adapter.setListener {
-            navController.navigate(SubjectDetailFragmentDirections.actionSubjectDetailFragmentToStudentDetailFragment(it))
+            navController.navigate(
+                SubjectDetailFragmentDirections.actionSubjectDetailFragmentToStudentDetailFragment(
+                    it
+                )
+            )
         }
 
         binding.rvStudents.apply {

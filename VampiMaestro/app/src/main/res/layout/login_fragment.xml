@@ -38,7 +38,7 @@
             android:src="@drawable/ic_vampi_logo"
             app:layout_constraintBottom_toBottomOf="@id/txvTitle"
             app:layout_constraintEnd_toStartOf="@id/txvTitle"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/edtMatricula"
             app:layout_constraintTop_toTopOf="@id/txvTitle" />
 
         <EditText
@@ -49,9 +49,8 @@
             android:layout_marginRight="40dp"
             android:background="@drawable/rounded_edt"
             android:hint="@string/hint_matricula"
+            android:inputType="number"
             android:text="@={vm.matricula}"
-            android:textColor="@color/background"
-            android:textColorHint="@color/background"
             app:layout_constraintBottom_toBottomOf="@id/edtContrasena"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -65,9 +64,8 @@
             android:layout_marginRight="40dp"
             android:background="@drawable/rounded_edt"
             android:hint="@string/hint_contrasena"
+            android:inputType="textPassword"
             android:text="@={vm.contrasena}"
-            android:textColor="@color/background"
-            android:textColorHint="@color/background"
             app:layout_constraintBottom_toTopOf="@id/btnDoLogin"
             app:layout_constraintEnd_toEndOf="@id/edtMatricula"
             app:layout_constraintStart_toStartOf="@id/edtMatricula"
@@ -82,6 +80,7 @@
             android:text="@string/btn_login"
             android:textAllCaps="false"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/edtMatricula"
             app:layout_constraintStart_toStartOf="@id/edtMatricula" />
@@ -91,7 +90,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="160dp" />
+            app:layout_constraintGuide_begin="120dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"

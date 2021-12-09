@@ -73,8 +73,7 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
                     )
                     editProfileViewModel.editUser(user)
                     editProfileViewModel.setLocalUser(user)
-                    //navController.navigate(EditProfileFragmentDirections.actionEditProfileFragmentToProfileDetailFragment())
-                    fragmentManager?.popBackStack()
+                    navController.navigate(EditProfileFragmentDirections.actionEditProfileFragmentToMenuFragment())
                 } else {
                     showToast("Oigamen no, lleneme bien los campos >:(")
                 }
@@ -90,14 +89,14 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
     }
 
     private fun goNext() {
-        if(imgCount==10)
+        if (imgCount == 10)
             imgCount = 1
-        else imgCount ++
+        else imgCount++
         setImage()
     }
 
     private fun goBack() {
-        if(imgCount==1)
+        if (imgCount == 1)
             imgCount = 10
         else imgCount--
         setImage()

@@ -55,6 +55,9 @@
         <argument
             android:name="user"
             app:argType="com.vampi.vampimaestro.domain.model.Usuario" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/subjectDetailFragment"
@@ -76,5 +79,8 @@
         <argument
             android:name="student"
             app:argType="com.vampi.vampimaestro.domain.model.DetalleAlumno" />
+        <action
+            android:id="@+id/action_studentDetailFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
 </navigation>
