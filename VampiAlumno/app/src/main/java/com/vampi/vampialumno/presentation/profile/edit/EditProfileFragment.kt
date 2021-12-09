@@ -50,7 +50,7 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
 
     override fun onViewStateChanged(state: BaseViewState?) {
         super.onViewStateChanged(state)
-        when(state){
+        when (state) {
 
         }
     }
@@ -61,7 +61,7 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
             lifecycleOwner = this@EditProfileFragment
 
             btnSave.setOnClickListener {
-                if (!editProfileViewModel.validateEmpties()){
+                if (!editProfileViewModel.validateEmpties()) {
                     val user = Usuario(
                         args.user.matricula,
                         binding.etName.text.toString(),
@@ -71,13 +71,12 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
                         args.user.contrasena,
                         imgCount.toString(),
                         args.user.tipo
-                        )
+                    )
                     editProfileViewModel.editUser(user)
                     editProfileViewModel.setLocalUser(user)
                     fragmentManager?.popBackStack()
-                    //navController.navigate(EditProfileFragmentDirections.actionEditProfileFragmentToMenuFragment())
-                }
-                else{
+                    navController.navigate(EditProfileFragmentDirections.actionEditProfileFragmentToMenuFragment())
+                } else {
                     showToast("Oigame no, lléneme bien los campos >>:(")
                 }
             }
@@ -90,21 +89,21 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
     }
 
     private fun goNext() {
-        if(imgCount==10)
+        if (imgCount == 10)
             imgCount = 1
-        else imgCount ++
+        else imgCount++
         setImage()
     }
 
     private fun goBack() {
-        if(imgCount==1)
+        if (imgCount == 1)
             imgCount = 10
         else imgCount--
         setImage()
     }
 
-    private fun setImage(){
-        when(imgCount){
+    private fun setImage() {
+        when (imgCount) {
             1 -> binding.ivProfilePicture.loadFromURLCircular(pps[0])
             2 -> binding.ivProfilePicture.loadFromURLCircular(pps[1])
             3 -> binding.ivProfilePicture.loadFromURLCircular(pps[2])
@@ -118,7 +117,7 @@ class EditProfileFragment : BaseFragment(R.layout.edit_profile_fragment) {
         }
     }
 
-    fun printUser (usuario: Usuario) {
+    fun printUser(usuario: Usuario) {
         imgCount = usuario.foto.toInt()
         binding.etName.setText(usuario.nombre)
         binding.etLastname1.setText(usuario.apPaterno.toString())

@@ -18,12 +18,13 @@ class SubjectsViewModel @Inject constructor(
     private val getUsuarioByMatricula: GetUsuarioByMatricula,
     private val getLocalUser: GetLocalUser,
     private val getDetalleAlumnoByMatricula: GetDetalleAlumnoByMatricula
-): BaseViewModel() {
+) : BaseViewModel() {
 
     fun getDetalleAlumnoByMatricula(matricula: Int) {
         getDetalleAlumnoByMatricula(matricula) {
             it.fold(::handleFailure) { response ->
-                state.value = SubjectsViewState.DetalleAlumnoReceived(response.detalleAlumnos ?: listOf())
+                state.value =
+                    SubjectsViewState.DetalleAlumnoReceived(response.detalleAlumnos ?: listOf())
 
                 true
             }

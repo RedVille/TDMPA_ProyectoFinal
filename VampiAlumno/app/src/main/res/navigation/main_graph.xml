@@ -9,7 +9,7 @@
         android:id="@+id/loginFragment"
         android:name="com.vampi.vampialumno.presentation.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" >
+        tools:layout="@layout/login_fragment">
         <action
             android:id="@+id/action_loginFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/menuFragment"
         android:name="com.vampi.vampialumno.presentation.menu.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" >
+        tools:layout="@layout/fragment_menu">
         <action
             android:id="@+id/action_menuFragment_to_profileDetailFragment"
             app:destination="@id/profileDetailFragment" />
@@ -33,7 +33,7 @@
         android:id="@+id/profileDetailFragment"
         android:name="com.vampi.vampialumno.presentation.profile.detail.ProfileDetailFragment"
         android:label="profile_detail_fragment"
-        tools:layout="@layout/profile_detail_fragment" >
+        tools:layout="@layout/profile_detail_fragment">
         <action
             android:id="@+id/action_profileDetailFragment_to_editProfileFragment"
             app:destination="@id/editProfileFragment" />
@@ -42,7 +42,7 @@
         android:id="@+id/subjectsFragment"
         android:name="com.vampi.vampialumno.presentation.subject.list.SubjectsFragment"
         android:label="subjects_fragment"
-        tools:layout="@layout/subjects_fragment" >
+        tools:layout="@layout/subjects_fragment">
         <action
             android:id="@+id/action_subjectsFragment_to_subjectDetailFragment"
             app:destination="@id/subjectDetailFragment" />
@@ -51,10 +51,13 @@
         android:id="@+id/editProfileFragment"
         android:name="com.vampi.vampialumno.presentation.profile.edit.EditProfileFragment"
         android:label="edit_profile_fragment"
-        tools:layout="@layout/edit_profile_fragment" >
+        tools:layout="@layout/edit_profile_fragment">
         <argument
             android:name="user"
-            app:argType="com.vampi.vampialumno.domain.model.Usuario"/>
+            app:argType="com.vampi.vampialumno.domain.model.Usuario" />
+        <action
+            android:id="@+id/action_editProfileFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
     <fragment
         android:id="@+id/subjectDetailFragment"
@@ -63,6 +66,6 @@
         tools:layout="@layout/subject_detail_fragment">
         <argument
             android:name="subject"
-            app:argType="com.vampi.vampialumno.domain.model.DetalleAlumno"/>
+            app:argType="com.vampi.vampialumno.domain.model.DetalleAlumno" />
     </fragment>
 </navigation>

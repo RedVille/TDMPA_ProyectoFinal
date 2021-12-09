@@ -62,19 +62,19 @@ class ProfileDetailFragment : BaseFragment(R.layout.profile_detail_fragment) {
 
     override fun onViewStateChanged(state: BaseViewState?) {
         super.onViewStateChanged(state)
-        when(state){
+        when (state) {
             is LoginViewState.LoggedUser -> printUser(state.usuario)
         }
     }
 
     @SuppressLint("SetTextI18n")
-    fun printUser (usuario: Usuario) {
+    fun printUser(usuario: Usuario) {
         user = usuario
         binding.txvNombre.text = "${usuario.nombre} ${usuario.apPaterno} ${usuario.apMaterno}"
         binding.txvMatricula.text = usuario.matricula.toString()
         binding.txvCorreo.text = usuario.correo
 
-        when(usuario.foto){
+        when (usuario.foto) {
             "1" -> binding.imgPerfil.loadFromURLCircular(pps[0])
             "2" -> binding.imgPerfil.loadFromURLCircular(pps[1])
             "3" -> binding.imgPerfil.loadFromURLCircular(pps[2])
@@ -101,7 +101,11 @@ class ProfileDetailFragment : BaseFragment(R.layout.profile_detail_fragment) {
             lifecycleOwner = this@ProfileDetailFragment
 
             imgEditPerfil.setOnClickListener {
-                navController.navigate(ProfileDetailFragmentDirections.actionProfileDetailFragmentToEditProfileFragment(user))
+                navController.navigate(
+                    ProfileDetailFragmentDirections.actionProfileDetailFragmentToEditProfileFragment(
+                        user
+                    )
+                )
             }
         }
     }

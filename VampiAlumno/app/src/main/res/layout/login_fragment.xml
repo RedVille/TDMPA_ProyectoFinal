@@ -38,7 +38,7 @@
             android:src="@drawable/ic_vampi_logo"
             app:layout_constraintBottom_toBottomOf="@id/txvTitle"
             app:layout_constraintEnd_toStartOf="@id/txvTitle"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toStartOf="@id/edtMatricula"
             app:layout_constraintTop_toTopOf="@id/txvTitle" />
 
         <EditText
@@ -78,6 +78,7 @@
             android:text="@string/btn_login"
             android:textAllCaps="false"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/guideline1"
             app:layout_constraintEnd_toEndOf="@id/edtMatricula"
             app:layout_constraintStart_toStartOf="@id/edtMatricula" />
@@ -87,7 +88,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_begin="160dp" />
+            app:layout_constraintGuide_begin="120dp" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"

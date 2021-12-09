@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="item"
             type="com.vampi.vampialumno.domain.model.DetalleAlumno" />
@@ -36,9 +37,11 @@
                 android:ellipsize="end"
                 android:fontFamily="@font/opensanslight"
                 android:lines="1"
+                android:text="@{item.nombre}"
                 android:textAlignment="center"
                 android:textColor="@color/font1"
-                android:text="@{item.nombre}"
+                android:textSize="17sp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@id/imgSubject"
                 app:layout_constraintStart_toStartOf="@id/imgSubject"
                 app:layout_constraintTop_toBottomOf="@id/imgSubject"

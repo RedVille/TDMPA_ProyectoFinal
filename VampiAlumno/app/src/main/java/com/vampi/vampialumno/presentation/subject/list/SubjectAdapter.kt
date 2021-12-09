@@ -20,7 +20,7 @@ class SubjectAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var layoutType = LayoutType.GRID
     private lateinit var listener: (detalleAlumnos: DetalleAlumno) -> Unit
 
-    fun addData(list: List<DetalleAlumno>){
+    fun addData(list: List<DetalleAlumno>) {
         this.list = list.toMutableList()
         notifyDataSetChanged()
     }
@@ -32,26 +32,27 @@ class SubjectAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = ViewHolderGridItem(
-        GridSubjectBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        GridSubjectBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) =
-        (holder as BaseViewHolder).bind(list[position], listener
+        (holder as BaseViewHolder).bind(
+            list[position], listener
         )
 
     override fun getItemCount() = list.size
 
 }
 
-class ViewHolderGridItem(private val  binding: GridSubjectBinding) :
-    BaseViewHolder(binding.root){
+class ViewHolderGridItem(private val binding: GridSubjectBinding) :
+    BaseViewHolder(binding.root) {
 
     override fun bind(data: DetalleAlumno, listener: (detalleAlumnos: DetalleAlumno) -> Unit) {
         binding.apply {
             item = data
             root.setOnClickListener { listener(data) }
 
-            when(data.foto.toInt()){
+            when (data.foto.toInt()) {
                 1 -> binding.imgSubject.loadFromURLRounded(subjectPicture[0])
                 2 -> binding.imgSubject.loadFromURLRounded(subjectPicture[1])
                 3 -> binding.imgSubject.loadFromURLRounded(subjectPicture[2])
